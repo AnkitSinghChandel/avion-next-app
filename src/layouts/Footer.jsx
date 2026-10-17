@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router";
-import "../styles/Signup.css";
 import { FloatButton } from "antd";
 
 const Footer = (props) => {

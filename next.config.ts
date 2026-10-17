@@ -21,6 +21,18 @@ const nextConfig: NextConfig = {
       "*.mp4": { type: "asset" },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "your-cdn.example.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -1,4 +1,6 @@
+"use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { Modal, Input, Button } from "antd";
 import avion from "../assets/images/avion.png";
 import { sendOTPEmail, verifyOTP } from "../redux/actions/emailAction";
@@ -38,7 +40,7 @@ const OTPModal = ({ open, email, onClose, onVerify, onResend }) => {
 
   return (
     <Modal
-      open={open}
+      open={true}
       // onCancel={onClose}
       footer={null}
       centered
@@ -49,14 +51,19 @@ const OTPModal = ({ open, email, onClose, onVerify, onResend }) => {
       {/* Email Icon */}
       <div className="flex justify-center mb-5">
         <div className="flex items-center justify-center w-25 h-20 rounded-2xl bg-blue-50">
-          <img
+          <Image
             src="/avion.png"
+            alt=""
             width={60}
+            height={60}
             className="absolute left-5 top-7 animate__animated animate__backInDown shadow-(--my-shadow) rounded-full"
           />
 
-          <img
+          <Image
             src="https://res.cloudinary.com/dlu4uc0ff/image/upload/v1791040056/hs778k8tlrx55sqmydw6.png"
+            alt=""
+            width={100}
+            height={100}
             className=""
           />
         </div>

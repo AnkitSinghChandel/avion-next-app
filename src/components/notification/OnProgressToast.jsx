@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate, useParams } from "react-router";
 import { Tooltip, notification, Progress } from "antd";
 
 const OnProgressToast = (percent) => {

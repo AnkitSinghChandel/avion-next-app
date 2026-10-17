@@ -347,6 +347,7 @@ const Signup = () => {
       <div className="buttonsDiv pt-5 px-3">
         <NextImage
           src="/avion.png"
+          alt=""
           width={60}
           height={1}
           className="absolute left-5 top-42.5 sm:top-8 animate__animated animate__backInDown shadow-(--my-shadow) rounded-full"
@@ -391,8 +392,10 @@ const Signup = () => {
               </div>
             ) : (
               <div className="flex gap-3 justify-center pe-">
-                <img
+                <NextImage
                   className="icons mx-"
+                  width={20}
+                  height={20}
                   src={btnHover ? addicon : doubleUser}
                   alt=""
                 />
@@ -526,11 +529,13 @@ const Signup = () => {
         {/* multiple imgs previews start */}
         <div className="flex gap-3 flex-wrap absolute top-10 right-0">
           {multipleImages.map((item, index) => (
-            <img
+            <NextImage
               key={index}
               src={item}
               alt=""
-              className="h-24 w-24 rounded object-cover border-2 border-dotted border-gray-400 p-1 productsBox"
+              width={96}
+              height={96}
+              className="object-cover border-2 border-dotted border-gray-400 p-1 productsBox"
             />
           ))}
         </div>
@@ -636,11 +641,13 @@ const Signup = () => {
               }));
             }}
           />
-          <img
+          <NextImage
             className="eyeIcon pointer absolute"
             style={{ top: "48px", right: "15px" }}
             src={showPassword ? eye : eyeClose}
             alt=""
+            width={20}
+            height={20}
             onClick={() => setShowPassword(!showPassword)}
           />
           <br />
@@ -796,7 +803,7 @@ const Signup = () => {
             }))}
             optionRender={(option) => (
               <div className="flex items-center gap-2 p-2">
-                <img
+                <NextImage
                   src={option?.data?.avatar}
                   alt=""
                   style={{ width: "26px", height: "26px" }}
