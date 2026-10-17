@@ -3,6 +3,7 @@
 @import "tailwind-animations";
 @import "../theme/theme.css";
 @import "../styles/asc_Anime.css";
+@import "../styles/NewInput.css";
 
 :root {
   /* ========= MY CSS VARIABLES ========= */

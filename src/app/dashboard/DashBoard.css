@@ -1,0 +1,17 @@
+.chart-line-sales {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawChartLine 1.5s ease-out forwards;
+}
+
+.chart-line-expenses {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawChartLine 1.8s ease-out forwards;
+}
+
+@keyframes drawChartLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,5 +1,8 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
+import NextImage from "next/image";
+import Link from "next/link";
 import "../styles/Header.css";
 import ASC22 from "../assets/images/ASC22.jpg";
 import searchicon from "../assets/icons/search.svg";
@@ -7,8 +10,8 @@ import warningImg from "../assets/icons/warning.svg";
 import moment from "moment";
 import Drawer from "./Drawer";
 import { Image, Popover, Tooltip, Dropdown, Skeleton } from "antd";
-import ProductsCategory from "../pages/products/ProductsCategory";
-import Carts from "../pages/products/Carts";
+import ProductsCategory from "@/src/app/products/ProductsCategory";
+import Carts from "@/src/app/products/Carts";
 import useDeviceType from "./useDeviceType";
 import {
   UserOutlined,
@@ -31,22 +34,21 @@ import {
   Palette,
 } from "lucide-react";
 
-import toast from "../components/notification/CustomToast";
-import { sidebar_Props_API } from "../redux/actions/userAction";
+import toast from "@/src/components/notification/CustomToast";
+import { sidebar_Props_API } from "@/src/redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
-import { BigImageAvatar } from "../components/common/ImageAvatar";
-import { BigInitialAvatar } from "../components/common/InitialAvatar";
-import HeaderTimer from "../timer/HeaderTimer";
-import DayNightToggle from "../theme/DayNightToggle";
-import HangingLamp from "../pages/settings/HangingLamp";
+import { BigImageAvatar } from "@/src/components/common/ImageAvatar";
+import { BigInitialAvatar } from "@/src/components/common/InitialAvatar";
+import HeaderTimer from "@/src/timer/HeaderTimer";
+import DayNightToggle from "@/src/theme/DayNightToggle";
+// import HangingLamp from "@/src/settings/HangingLamp";
 import { useTranslation } from "react-i18next";
 
 const Header = (props) => {
   const showProductsCategory = props?.showProductsCategory ?? true;
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
-  const path = location.pathname;
+  const path = usePathname();
   console.log("path", path);
   const deviceType = useDeviceType();
 
@@ -122,7 +124,7 @@ const Header = (props) => {
     // if not timer running then proceed with clear all👇
     sessionStorage.clear();
     localStorage.clear();
-    navigate("/");
+    router.push("/");
   };
 
   const roleIcons2 = (role = "") => {
@@ -175,9 +177,9 @@ const Header = (props) => {
           {/* for timer end */}
 
           {/* Hanging Lamp */}
-          <div className="sidebar-lamp absolute top-0 left-[50%] hidden">
+          {/* <div className="sidebar-lamp absolute top-0 left-[50%] hidden">
             <HangingLamp />
-          </div>
+          </div> */}
 
           <div className="headerMainDiv px-0 sm:px-2 pt-">
             <div className={isMobileView || isTabView ? "" : "hidden"}>
@@ -207,7 +209,7 @@ const Header = (props) => {
                   path === "/dashboard" ? "selectedOption" : "txtDacoration"
                 }
                 onClick={() => {
-                  navigate("/dashboard");
+                  router.push("/dashboard");
                 }}
               >
                 {t("Dashboard")}
@@ -218,7 +220,7 @@ const Header = (props) => {
                   path === "/users" ? "selectedOption" : "txtDacoration"
                 }
                 onClick={() => {
-                  navigate("/users");
+                  router.push("/users");
                 }}
               >
                 {t("Users")}
@@ -229,7 +231,7 @@ const Header = (props) => {
                   path === "/suppliers" ? "selectedOption" : "txtDacoration"
                 }
                 onClick={() => {
-                  navigate("/suppliers");
+                  router.push("/suppliers");
                 }}
               >
                 {t("Suppliers")}
@@ -242,7 +244,7 @@ const Header = (props) => {
                     : "txtDacoration"
                 }
                 onClick={() => {
-                  navigate(`/profile/${userid}`);
+                  router.push(`/profile/${userid}`);
                 }}
               >
                 {t("Profile")}
@@ -338,7 +340,7 @@ const Header = (props) => {
                           : "",
                       }}
                       onClick={() => {
-                        navigate(`/profile/${userid}`);
+                        router.push(`/profile/${userid}`);
                       }}
                     >
                       <UserOutlined className="" />
@@ -407,7 +409,7 @@ const Header = (props) => {
                       onClick={() => {
                         // sessionStorage.clear();
                         // localStorage.clear();
-                        // navigate("/");
+                        // router.push("/");
                         handleLogOut();
                       }}
                     >
@@ -481,14 +483,14 @@ const Header = (props) => {
       ) : (
         <div className="flex flex-wrap justify-end gap-4 pt-4 pe-5">
           <Link
-            to="/signup"
+            href="/signup"
             className={path === "/signu-p" ? "withUnderLine" : "txtDacoration"}
           >
             Signup
           </Link>
 
           <Link
-            to="/"
+            href="/"
             className={path === "/-" ? "withUnderLine" : "txtDacoration"}
           >
             Login
