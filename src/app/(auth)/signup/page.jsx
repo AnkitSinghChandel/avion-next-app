@@ -459,8 +459,10 @@ const Signup = () => {
                   borderRadius: "50%",
                 },
               }}
+              // placeholder={{ progress: { percent: OnProgressToast } }}
               preview={{
-                mask: (
+                mask: { blur: true },
+                cover: (
                   <div className="flex items-center justify-center gap-4">
                     <EyeOutlined style={{ fontSize: 22 }} />
                     <DeleteOutlined
@@ -535,7 +537,7 @@ const Signup = () => {
               alt=""
               width={96}
               height={96}
-              className="object-cover border-2 border-dotted border-gray-400 p-1 productsBox"
+              className="object-cover border-2 border-dotted border-gray-400 p-1 multiImgBox"
             />
           ))}
         </div>

@@ -56,6 +56,28 @@
   font-weight: 400;
 }
 
+.userImg {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--my-shadow2);
+}
+
+.multiImgBox {
+  background: var(--card-bg);
+  box-shadow: var(--google-shadow);
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.multiImgBox:hover,
+.multiImgBox:hover {
+  box-shadow: var(--my-shadow2);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-20px);
+}
+
 .ant-select-placeholder {
   opacity: 70% !important;
   font-weight: 400 !important;

@@ -107,7 +107,7 @@ export const AdvImageAvatar = (props) => {
           },
         }}
         preview={{
-          mask: (
+          cover: (
             <div className="flex items-center justify-center gap-4">
               <EyeOutlined style={{ fontSize: 22 }} />
               <DeleteOutlined

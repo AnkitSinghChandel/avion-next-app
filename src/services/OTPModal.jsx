@@ -40,7 +40,7 @@ const OTPModal = ({ open, email, onClose, onVerify, onResend }) => {
 
   return (
     <Modal
-      open={true}
+      open={open}
       // onCancel={onClose}
       footer={null}
       centered
