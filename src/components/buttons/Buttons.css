@@ -1,0 +1,37 @@
+.addButton {
+  background: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  border: 1px solid var(--btn-primary-border) !important;
+  box-shadow: var(--my-shadow) !important;
+  width: 180px;
+  max-width: 100%;
+  height: 45px;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addButton:hover:not(:disabled) {
+  background: var(--btn-primary-bg-hover) !important;
+  border: 1px solid var(--btn-primary-border) !important;
+  color: var(--btn-primary-text) !important;
+}
+
+.cancelButton {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border) !important;
+  box-shadow: var(--my-shadow) !important;
+  width: 180px;
+  max-width: 100%;
+  height: 45px;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: var(--btn-secondary-bg-hover) !important;
+  border: 1px solid var(--btn-secondary-border) !important;
+  color: var(--btn-secondary-text) !important;
+}

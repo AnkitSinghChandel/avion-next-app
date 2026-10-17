@@ -1,0 +1,12 @@
+.custom-spin .ant-spin-dot i {
+  background-color: #8a6a5a !important;
+}
+
+.btn-custom-spin .ant-spin-dot i {
+  background-color: white !important;
+}
+
+.ant-select-item-option {
+  border-bottom: 1px solid #dee2e6 !important;
+  border-radius: unset !important;
+}

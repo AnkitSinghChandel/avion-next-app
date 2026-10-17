@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "tw-animations";
+@import "tailwind-animations";
+@import "../theme/theme.css";
+@import "../styles/asc_Anime.css";
+
+:root {
+  /* ========= MY CSS VARIABLES ========= */
+  /* Common */
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  --bg: #fafafa;
+  --text: #4b5966;
+  --font-size: 16px;
+  --my-shadow: rgba(0, 0, 0, 0.25) 0px 4px 8px;
+  --my-shadow2: rgba(0, 0, 0, 0.45) 0px 5px 10px;
+  --google-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+  /* Sidebar */
+  --sidebar-bg: #faf7f5;
+  --sidebar-text: #3f4d5a;
+  --selected-sidebar-bg: #6a5a50;
+
+  /* Primary Button */
+  --btn-primary-bg: #6a5a50;
+  --btn-primary-border: #6a5a50;
+  --btn-primary-bg-hover: #7a6a60;
+  --btn-primary-text: white;
+
+  /* Secondary Button */
+  --btn-secondary-bg: #fff;
+  --btn-secondary-border: #6a5a50;
+  --btn-secondary-bg-hover: #f1f1f1;
+  --btn-secondary-text: #5b5b5b;
+
+  /* Table */
+  --table-header-bg: #ffffff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #f9f6f3;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #fff;
+  --card-text: #3f4d5a;
+  --card-btn-primary: #8d7b68;
+
+  /* Badge color */
+  --badge-bg: #8d7b68;
+  --badge-text: #3f4d5a;
+
+  /* Popup */
+  --popup-bg: white;
+  --popup-text: #3f4d5a;
+  --popup-highlight: #f3f0ed;
+
+  /* Placeholder */
+  --placeholder-color-old: #8e8e93; /* for normal */
+  --placeholder-color: #9c8b7b; /* for my theme */
+
+  font-family: var(--sans);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark; /* Let browser know we support both */
+  background: var(--bg);
+  color: var(--text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161a22;
+    --text: #9ca3af;
+
+    --btn-primary-bg: #8a6a5a;
+
+    --btn-secondary-bg: #222b38;
+    --btn-secondary-text: #e4e4e4;
+    --btn-secondary-bg-hover: #2a2a2a;
+
+    --table-header-bg: #161a22;
+    --table-row-bg: #222b38;
+    --table-row-even-bg: #161a22;
+    --table-row-hover-bg: #161a22;
+
+    --card-bg: #222b38;
+    --card-text: #9ca3af;
+
+    --popup-bg: #222b38;
+    --popup-text: #9ca3af;
+
+    --badge-text: #7d8794;
+
+    --placeholder-color: #4b5966;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+/* ////////////////////////////// */
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointerNone {
+  pointer-events: none;
+  color: #a5a5a5 !important;
+  opacity: 50%;
+  position: relative;
+}
+
+.pointerNone::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  cursor: not-allowed;
+  pointer-events: all;
+}
+
+.ascButton {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* .ascButton:active {
+  transform: scale(0.95);
+} */
+
+.ascButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.ascButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+/* for input placeholder auto set color to visible clear */
+input::placeholder {
+  opacity: 70% !important;
+  color: var(--placeholder-color) !important;
+  font-weight: 400 !important;
+}
+
+textarea::placeholder {
+  opacity: 70% !important;
+  color: var(--placeholder-color) !important;
+  font-weight: 400 !important;
+}
+
+/* input type number hide arrows with class "no-spinner" */
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  display: none;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* textarea scrollbar */
+textarea {
+  resize: none;
+}
+textarea::-webkit-scrollbar {
+  width: 5px;
+}
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* asc custom scroll bar css start */
+#ascScroll::-webkit-scrollbar {
+  width: 6px;
+}
+#ascScroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#ascScroll::-webkit-scrollbar-thumb {
+  /* background: #a5a5a5; */
+  background: #f1f1f1;
+  border-radius: 999px;
+}
+#ascScroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+/* asc custom scroll bar css end */
+
+/* scroll bar for whole system */
+::-webkit-scrollbar {
+  width: 10px; /* Vertical scrollbar */
+  height: 10px; /* Horizontal scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  /* background: #a5a5a5; */
+  background: var(--scrollbar-bg);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  background-clip: content-box;
+}
+
+/* input auto fill start */
+/* Chrome, Edge, Safari - Autofill background override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  caret-color: var(--text) !important;
+  transition: background-color 9999s ease-out;
+}
+
+/* Firefox - Autofill */
+input:-moz-autofill {
+  box-shadow: 0 0 0 1000px var(--bg) inset !important;
+  color: var(--text) !important;
+}
+/* input auto fill end */
+
+/* hide scroll bar in mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* hide tooltip in mobile */
+@media (hover: none) and (pointer: coarse) {
+  .ant-tooltip {
+    /* display: none !important; */
+  }
+
+  .ant-tooltip:not(.touch-enabled-tooltip) {
+    display: none !important;
+  }
+}

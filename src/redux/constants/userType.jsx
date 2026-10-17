@@ -1,0 +1,10 @@
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+export const LOGIN = "LOGIN";
+export const SIGNUP = "SIGNUP";
+export const FETCH_USER_BY_ID = "FETCH_USER_BY_ID";
+export const FETCH_ALL_USERS = "FETCH_ALL_USERS";
+export const UPDATE_USER_BY_ID = "UPDATE_USER_BY_ID";
+export const DELETE_USER_BY_ID = "DELETE_USER_BY_ID";
+export const FORGOT_PASSWORD = "FORGOT_PASSWORD";
+export const RESET_PASSWORD = "RESET_PASSWORD";
+export const SIDEBAR_PROPS_API = "SIDEBAR_PROPS_API";

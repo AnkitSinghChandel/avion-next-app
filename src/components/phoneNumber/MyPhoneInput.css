@@ -1,0 +1,153 @@
+#my-phoneInput .ant-phone-input-wrapper .ant-space-compact {
+  width: 100%;
+  height: 58px;
+}
+
+/* left side country flag box */
+#my-phoneInput
+  :where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item,
+:where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item.ant-select-sm,
+:where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item.ant-select-lg {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 18px;
+  border: 1px solid #d8cdc2;
+  width: 60px !important;
+}
+
+/* right side input number box */
+#my-phoneInput
+  :where(.css-dev-only-do-not-override-12q6fii).ant-input-outlined {
+  color: var(--text);
+  border: 1px solid #d8cdc2;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  /* padding-left: 18px; */
+  transition: 0.3s;
+}
+
+/* dropdown search box */
+#my-phoneInput
+  :where(.css-dev-only-do-not-override-12q6fii).ant-input-outlined:focus,
+:where(.css-dev-only-do-not-override-12q6fii).ant-input-outlined:focus-within {
+  /* border: none !important; */
+  border-color: #d8cdc2 !important;
+  box-shadow: none !important;
+  outline: 0;
+}
+
+/* ////////////////////////////////////////////////////////////// */
+
+/* profile phone input left side country flag box */
+#profile-phone-input
+  :where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item,
+:where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item.ant-select-sm,
+:where(.css-dev-only-do-not-override-12q6fii).ant-select-compact-item:not(
+    .ant-select-compact-last-item
+  ).ant-select-compact-first-item.ant-select-lg {
+  border: none;
+}
+
+/* profile phone input right side input number box */
+#profile-phone-input
+  :where(.css-dev-only-do-not-override-12q6fii).ant-input-outlined {
+  border: none;
+}
+
+/* ////////////////////////////////////////////////////// */
+
+/* react-international-phone-input library */
+#profile-phone-input_old
+  .react-international-phone-input-container
+  .react-international-phone-country-selector-button {
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 18px;
+  border: 1px solid #d8cdc2;
+  width: 60px !important;
+  height: 58px;
+}
+
+#profile-phone-input_old .react-international-phone-input {
+  width: 100%;
+  height: 58px;
+  color: var(--text);
+  border: 1px solid #d8cdc2;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  /* padding-left: 18px; */
+  transition: 0.3s;
+}
+
+#profile-phone-input {
+  position: relative;
+}
+
+/* left side flag box */
+#profile-phone-input .react-international-phone-country-selector-button {
+  padding-left: 12px !important;
+}
+
+/* right side input box */
+#profile-phone-input .react-international-phone-input {
+  font-weight: 500;
+  background: transparent;
+}
+
+/* dropdown box */
+#profile-phone-input .react-international-phone-country-selector-dropdown {
+  top: auto !important;
+  bottom: 100% !important;
+
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: var(--google-shadow);
+}
+
+#profile-phone-input
+  .react-international-phone-country-selector-dropdown
+  .react-international-phone-country-selector-dropdown__list-item {
+  border-bottom: 1px solid #e5e5e5;
+  /* gap in list */
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#profile-phone-input
+  .react-international-phone-country-selector-dropdown
+  .react-international-phone-country-selector-dropdown__list-item:last-child {
+  border-bottom: none;
+}
+
+#profile-phone-input {
+  /* PHONE INPUT */
+  /* --react-international-phone-height: 52px; */
+  --react-international-phone-background-color: var(--card-bg);
+  --react-international-phone-text-color: #4b5966;
+  --react-international-phone-font-size: 16px;
+  --react-international-phone-border-radius: 12px;
+  /* --react-international-phone-border-color: #d8cbbb; */
+  --react-international-phone-border-color: none;
+
+  /* DISABLED INPUT */
+  --react-international-phone-disabled-background-color: #f5f5f5;
+  --react-international-phone-disabled-text-color: #666;
+
+  /* FOCUS */
+  --react-international-phone-focus-border-color: #8a7768;
+}

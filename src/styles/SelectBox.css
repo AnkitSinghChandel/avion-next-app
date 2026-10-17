@@ -1,0 +1,162 @@
+/* ASC SELECT BOX START */
+.ascInputDiv {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+  height: 50px;
+  border: 1px solid #70707080;
+  border-radius: 8px;
+  background: white;
+  color: #4b5966;
+  font-size: 16px;
+  box-shadow: var(--my-shadow);
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.selectedInput {
+  color: #4b5966;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ascSelectBox {
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  background: var(--popup-bg);
+  color: var(--popup-text);
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 25px;
+  box-shadow: var(--my-shadow);
+  cursor: pointer;
+  z-index: 10;
+  /* transition: all 0.3s ease-in-out 0s; */
+}
+
+.selectBoxInput {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ascSearchInput {
+  color: #4b5966;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+}
+
+.selectBoxOptions {
+  height: auto;
+  max-height: 240px;
+  overflow: auto;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.optionsItem {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  /* color: #4b5966; */
+  color: var(--popup-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.optionsItem:hover {
+  color: #4b5966;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.option-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.option-abbr {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #8d7b68;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  align-content: center;
+  text-transform: capitalize; /* capitalize first letter of each word */
+  text-transform: uppercase; /* capitalize All letter of word */
+}
+
+.selectedItem {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #4b5966;
+  font-weight: 500;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.upArrowOpt {
+  width: 10px;
+  height: 10px;
+  rotate: 180deg;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.downArrowOpt {
+  width: 10px;
+  height: 10px;
+  rotate: 0deg;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.xicon {
+  width: 8px;
+  height: 8px;
+  opacity: 80%;
+}
+/* ASC SELECT BOX End */
+
+.selectBox2 {
+  position: absolute;
+  width: 200px;
+  min-width: 100%;
+  background: #fff;
+  z-index: 2;
+  border: 0.2px solid #bbb8b8;
+  border-radius: 10px;
+  box-shadow: var(--my-shadow);
+  top: 30px;
+  left: -18px;
+
+  color: #4b5966;
+  font-size: 16px;
+  cursor: pointer;
+}

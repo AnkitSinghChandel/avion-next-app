@@ -1,0 +1,60 @@
+.my-list-wrapper {
+  padding: 16px;
+  background: #f3f4f6;
+  min-height: 200px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.drag-items {
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* ListDrag 2 */
+.columns-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.column-wrapper {
+  min-width: 280px;
+  flex: 1;
+}
+
+.column-wrapper h2 {
+  margin: 0;
+  padding: 16px;
+  background: #dbeafe;
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+}
+
+.droppable-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 0 0 10px 10px;
+}
+
+.drag-items2 {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  cursor: grab;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 8%);
+}
+
+.drag-items2:active {
+  cursor: grabbing;
+}
+
+.draggingOver {
+  background: #bfdbfe;
+}

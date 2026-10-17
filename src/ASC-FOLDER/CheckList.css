@@ -1,0 +1,62 @@
+.checklistInput {
+  border: 1px solid gray;
+  border-radius: 8px;
+  color: black;
+  font-size: 16px;
+  padding: 5px 5px 5px 8px;
+  width: 20%;
+}
+
+.userImgAvtar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 3px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #4a5565;
+  font-size: 14px;
+  font-weight: 600;
+  object-fit: cover;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.userImgAvtar:hover {
+  transition: all 0.3s;
+  transform: translateY(-10px);
+}
+
+.dateInCheckList {
+  font-size: 18px;
+  color: #4b5966;
+  font-weight: 600;
+  width: 140px;
+}
+
+.dateInCheckListInRed {
+  font-size: 18px;
+  color: red;
+  font-weight: 600;
+  width: 140px;
+}
+
+#task-input input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d4d4d8;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#task-input input[type="checkbox"]:checked {
+  background: #f0fdf4;
+  border-color: #059669;
+}

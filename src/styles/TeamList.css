@@ -1,0 +1,90 @@
+/* table css start 👇 */
+.ascTableWrapper {
+  align-items: center;
+  /* background: #fafafa; */
+  display: block;
+  overflow-x: auto;
+  position: relative;
+  white-space: nowrap;
+  /* height: 500px; */
+  max-height: calc(100vh - 230px);
+  min-height: auto;
+}
+
+.tableHeading {
+  position: sticky;
+  top: -2px;
+  z-index: 1;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #7e7e7e;
+}
+
+.tableContainer {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  background-color: var(--table-row-bg);
+  font-size: 16px;
+  table-layout: fixed; /* IMPORTANT  */
+}
+
+.tableContainer th,  /* common css for both th and td */
+.tableContainer td {
+  border: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
+  padding: 10px;
+  text-align: left;
+  text-overflow: ellipsis; /* Handles long content */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tableContainer th {
+  background-color: var(--table-header-bg);
+  color: var(--badge-bg);
+  /* white-space: normal !important; */
+}
+
+.tableContainer tbody tr:nth-child(even) {
+  background-color: var(--table-row-even-bg);
+}
+
+/* Hover effect */
+.tableContainer tbody tr:hover {
+  background-color: var(--table-row-hover-bg);
+  transition: all 1s ease;
+}
+
+.txtField {
+  font-weight: 500;
+}
+/* table css end 👆 */
+
+.sortingSearchingDiv {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  background: var(--table-header-bg);
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.upArrow {
+  width: 15px;
+  height: 15px;
+  rotate: 180deg;
+  cursor: pointer;
+  transition: rotate 0.3s ease-in-out;
+}
+
+.downArrow {
+  width: 15px;
+  height: 15px;
+  rotate: 0deg;
+  cursor: pointer;
+  transition: rotate 0.3s ease-in-out;
+}

@@ -1,0 +1,94 @@
+.dragDropWrapper {
+  display: flex;
+  gap: 15px;
+  /* background: var(--popup-bg); */
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.single-column-wrapper {
+  background: var(--popup-bg);
+  /* width: 300px; */
+  width: fit-content;
+  min-width: 300px;
+}
+
+.column-header-box {
+  background: #e7e6e6;
+  /* border: 1px solid grey; */
+  border-radius: 10px 10px 0px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.column-droppable-area {
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* max-height: calc(100vh - 235px); */
+  background: #f3f4f6;
+  border-radius: 0px 0px 10px 10px;
+  padding: 0px 15px 15px 15px;
+  padding-right: 8px; /* space for scroll bar */
+}
+
+.drag-items-box {
+}
+
+.taskitemsDiv {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  width: auto;
+  height: auto;
+  min-height: 50px;
+  /* box-shadow: 0 2px 5px rgb(0 0 0 / 8%); */
+  box-shadow: var(--my-shadow);
+  cursor: pointer;
+}
+
+.taskitems {
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* column highlist */
+.isDraggingOver {
+  /* background: #dbeafe; */
+  border: 1px dashed #007bff;
+  border-radius: 10px;
+}
+
+/* drag item highlight */
+.draggingOver {
+  /* background: #dbeafe; */
+  border: 1px dashed #007bff;
+  border-radius: 10px;
+}
+
+.deleteTask {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  width: auto;
+  background: white;
+  border: 1.5px dashed red;
+  border-radius: 50%;
+  color: red;
+  font-size: 12px;
+  font-weight: 400;
+}

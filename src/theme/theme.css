@@ -1,0 +1,248 @@
+/* === Light Theme === */
+:root[data-mode="light"] {
+  --bg: #fafafa;
+  --text: #4b5966;
+  --scrollbar-bg: #cbd5e1;
+
+  /* Sidebar */
+  --sidebar-bg: #faf7f5;
+  --sidebar-text: #3f4d5a;
+  --selected-sidebar-bg: #6a5a50;
+
+  /* Primary Button */
+  --btn-primary-bg: #6a5a50;
+  --btn-primary-border: #6a5a50;
+  --btn-primary-bg-hover: #7a6a60;
+  --btn-primary-text: white;
+
+  /* Secondary Button */
+  --btn-secondary-bg: #fff;
+  --btn-secondary-border: #6a5a50;
+  --btn-secondary-bg-hover: #f1f1f1;
+  --btn-secondary-text: #5b5b5b;
+
+  /* Table */
+  --table-header-bg: #ffffff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #f9f6f3;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #fff;
+  --card-text: #3f4d5a;
+  --card-btn-primary: #8d7b68;
+
+  /* Badge color */
+  --badge-bg: #8d7b68;
+  --badge-text: #3f4d5a;
+
+  /* Popup */
+  --popup-bg: white;
+  --popup-text: #3f4d5a;
+  --popup-highlight: #f3f0ed;
+}
+
+/* === Dark Theme === */
+:root[data-mode="dark"] {
+  --bg: #161a22;
+  --text: #9ca3af;
+  --scrollbar-bg: #171e2e;
+
+  --btn-primary-bg: #8a6a5a;
+
+  --btn-secondary-bg: #161a22;
+  --btn-secondary-text: #e4e4e4;
+  --btn-secondary-bg-hover: #2a2a2a;
+
+  --table-header-bg: #161a22;
+  --table-row-bg: #171e2e;
+  --table-row-even-bg: #171e2e;
+  --table-row-hover-bg: #161a22;
+
+  --card-bg: #171e2e;
+  --card-text: #9ca3af;
+
+  --popup-bg: #171e2e;
+  --popup-text: #9ca3af;
+  --popup-highlight: #171e2e;
+
+  --badge-text: #7d8794;
+
+  --placeholder-color: #4b5966;
+}
+
+:root[data-mode="dark"] .icon {
+  filter: invert(0) brightness(1);
+}
+:root[data-mode="dark"] #supp-pagination .root-pagination,
+:root[data-mode="dark"] #supp-pagination .ant-pagination-total-text,
+:root[data-mode="dark"] #supp-pagination .ant-pagination-options-quick-jumper,
+:root[data-mode="dark"] #supp-pagination .anticon {
+  color: grey;
+}
+/* html[data-mode="dark"] table th,
+html[data-mode="dark"] table td {
+  border: none;
+  border-bottom: 1px solid #374151;
+} */
+
+html[data-mode="dark"] #ascTeamTable th,
+html[data-mode="dark"] #ascTeamTable td {
+  border: none;
+  border-bottom: 1px solid #374151;
+}
+
+/* === Gold Theme === */
+:root[data-theme="theme-gold"] {
+  --sidebar-bg: #faf7f5;
+  --sidebar-text: #3f4d5a;
+  --selected-sidebar-bg: #b89b7a;
+
+  --btn-primary-bg: #b89b7a;
+  --btn-primary-border: #b89b7a;
+  --btn-primary-bg-hover: #c7ab8d;
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-border: #b89b7a;
+
+  --table-header-bg: #f8f4ef;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #faf6f2;
+  --table-row-hover-bg: #ffffff;
+
+  --card-bg: #fff;
+  --card-text: #3f4d5a;
+  --card-btn-primary: #b89b7a;
+
+  --badge-bg: #b89b7a;
+  --badge-text: #3f4d5a;
+
+  --popup-bg: #fff;
+  --popup-text: #3f4d5a;
+  --popup-highlight: #f5f0eb;
+
+  --placeholder-color: #9c8b7b;
+}
+html[data-theme="theme-gold"][data-mode="dark"] {
+  --sidebar-bg: #2d2418;
+
+  --card-bg: #171e2e;
+
+  --table-header-bg: #171e2e;
+  --table-row-bg: #171e2e;
+  --table-row-even-bg: #171e2e;
+  --table-row-hover-bg: #171e2e;
+
+  --popup-bg: #171e2e;
+  --popup-highlight: #171e2e;
+}
+
+/* === Ocean Theme === */
+:root[data-theme="theme-ocean"] {
+  /* Sidebar */
+  --sidebar-bg: #eef8fd;
+  --sidebar-text: #1f4d63;
+  --selected-sidebar-bg: #38bdf8;
+
+  /* Primary Button */
+  --btn-primary-bg: #38bdf8;
+  --btn-primary-border: #38bdf8;
+  --btn-primary-bg-hover: #1fb6f7;
+  --btn-primary-text: #ffffff;
+
+  /* Secondary Button */
+  --btn-secondary-border: #38bdf8;
+
+  /* Table */
+  --table-header-bg: #f3fbff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #f7fcff;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #fff;
+  --card-text: #1f4d63;
+  --card-btn-primary: #38bdf8;
+
+  /* Badge */
+  --badge-bg: #38bdf8;
+  --badge-text: #1f4d63;
+  --popup-highlight: #e6f8ff;
+
+  /* Popup */
+  --popup-bg: #fff;
+  --popup-text: #1f4d63;
+
+  /* Placeholder */
+  --placeholder-color: #8e8e93;
+}
+html[data-theme="theme-ocean"][data-mode="dark"] {
+  --sidebar-bg: #112b35;
+
+  --card-bg: #171e2e;
+
+  --table-header-bg: #171e2e;
+  --table-row-bg: #171e2e;
+  --table-row-even-bg: #171e2e;
+  --table-row-hover-bg: #171e2e;
+
+  --popup-bg: #171e2e;
+  --popup-highlight: #171e2e;
+}
+
+/* === Blue Theme === */
+:root[data-theme="theme-blue"] {
+  /* Sidebar */
+  --sidebar-bg: #f0f7ff;
+  --sidebar-text: #1f3b5b;
+  --selected-sidebar-bg: #4096ff;
+
+  /* Primary Button */
+  --btn-primary-bg: #4096ff;
+  --btn-primary-border: #4096ff;
+  --btn-primary-bg-hover: #1677ff;
+  --btn-primary-text: #ffffff;
+
+  /* Secondary Button */
+  --btn-secondary-border: #4096ff;
+
+  /* Table */
+  --table-header-bg: #f5f9ff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #fafcff;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #ffffff;
+  --card-text: #1f3b5b;
+  --card-btn-primary: #4096ff;
+
+  /* Badge */
+  --badge-bg: #4096ff;
+  --badge-text: #1f4d63;
+
+  /* Popup */
+  --popup-bg: #ffffff;
+  --popup-text: #1f3b5b;
+  --popup-highlight: #f0f6ff;
+
+  /* Placeholder */
+  --placeholder-color: #8e8e93;
+}
+html[data-theme="theme-blue"][data-mode="dark"] {
+  --text: #9ca3af;
+
+  --sidebar-bg: #152235;
+
+  --card-bg: #171e2e;
+  --card-text: #9ca3af;
+
+  --table-header-bg: #171e2e;
+  --table-row-bg: #171e2e;
+  --table-row-even-bg: #171e2e;
+  --table-row-hover-bg: #171e2e;
+
+  --popup-bg: #171e2e;
+  --popup-text: #9ca3af;
+  --popup-highlight: #171e2e;
+}

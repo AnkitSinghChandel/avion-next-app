@@ -1,0 +1,43 @@
+.add-product {
+  width: 160px;
+  height: 40px;
+  border: 1px solid #d1d5dc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-primary-bg);
+  color: white;
+  box-shadow: var(--my-shadow);
+  flex-grow: 1;
+}
+
+.add-product:hover {
+  background: var(--btn-primary-bg-hover);
+}
+
+.productsBox {
+  background: var(--card-bg);
+  box-shadow: var(--google-shadow);
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.productsBox:hover,
+.productsBox:hover {
+  box-shadow: var(--my-shadow2);
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-20px);
+}
+
+.productTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--card-text);
+}
+
+.productName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #8d7b68;
+}

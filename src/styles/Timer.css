@@ -1,0 +1,57 @@
+.timerDiv {
+  position: fixed;
+  bottom: 20px;
+  right: 28px;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: var(--my-shadow);
+  transition: all 0.5s ease-in-out !important;
+}
+
+.timerText {
+  color: #4b5966;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.timerButton {
+  background: #8d7b68;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+  box-shadow: var(--google-shadow);
+  cursor: pointer;
+}
+
+.timerButton:disabled {
+  background: gray;
+  box-shadow: var(--google-shadow);
+  cursor: not-allowed;
+}
+
+/* Header Timer css start */
+.headerTimer {
+  width: auto;
+  position: fixed;
+  top: 2px;
+  left: 230px;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: var(--google-shadow);
+  transition: all 0.5s ease-in-out !important;
+}
+
+.headerTimerButton {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.headerTimerButton:disabled {
+  background: gray;
+  box-shadow: var(--google-shadow);
+  cursor: not-allowed;
+}
+/* Header Timer css end */

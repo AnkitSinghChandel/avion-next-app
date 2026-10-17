@@ -1,0 +1,24 @@
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.25;
+  pointer-events: none;
+
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleAnim 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  will-change: transform, opacity;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}

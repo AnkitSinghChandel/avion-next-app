@@ -1,0 +1,91 @@
+.commentsDiv {
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Tip Tap Editor css start */
+.tipTapToolbar {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  border: 1px dotted grey;
+  border-radius: 8px;
+}
+
+.toolbarIcon {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: var(--google-shadow);
+}
+
+.toolbarIcon.active {
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-bg);
+  color: white;
+}
+
+.toolbarIcon:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+/* Tip Tap Editor main div 👇*/
+.ProseMirror {
+  padding: 10px !important;
+  font-size: 16px !important;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 10px;
+}
+
+.ProseMirror p.is-empty::before {
+  content: attr(data-placeholder);
+  color: gray;
+  opacity: 90%;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ProseMirror ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.ProseMirror ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.ProseMirror h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ProseMirror h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.ProseMirror h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+/* Tip Tap Editor main div 👆*/
+
+.mention_css {
+  color: #1677ff;
+  background: #e6f4ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.mention_css:hover {
+  background: #bae0ff;
+}
+/* Tip Tap Editor css end */

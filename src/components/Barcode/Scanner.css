@@ -1,0 +1,23 @@
+#reader {
+  border: none !important;
+}
+
+#reader__dashboard {
+  border: none !important;
+}
+
+#reader__scan_region {
+  border: none !important;
+}
+
+#reader__scan_region img {
+  display: none !important;
+}
+#reader img {
+  display: none !important;
+}
+
+#reader button {
+  border-radius: 12px !important;
+  padding: 10px 20px !important;
+}

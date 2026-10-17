@@ -1,0 +1,98 @@
+.headerMainDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txtDacoration {
+  text-decoration: none;
+  color: var(--badge-text);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.txtDacoration:hover {
+  color: var(--badge-bg);
+}
+
+.selectedOption {
+  text-decoration: none;
+  color: var(--badge-bg);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.withUnderLine {
+  border-bottom: 4px solid #00246a;
+  text-decoration: none;
+  color: #00246a;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.withUnderLineAnima {
+  width: 110px;
+  position: absolute;
+  border-bottom: 4px solid #00246a;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out !important;
+  /* right: 50px; */
+  top: 85px;
+}
+
+.userImg {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--my-shadow2);
+}
+
+.image-cover {
+  border-radius: 50%;
+}
+
+.commanSearchBox {
+  border: 1px solid #cfc5bb;
+  border-radius: 16px;
+  width: 95%;
+  transition: all 0.5s ease-in-out;
+}
+
+.commanSearchBox:hover {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.userHeaderInfo {
+  text-decoration: none;
+  color: gray;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.userPopupInfo {
+  color: var(--popup-text);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.borderTop {
+  border-top: 1px solid #dee2e6;
+}
+
+.borderBottom {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.borderTopBottom {
+  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+}

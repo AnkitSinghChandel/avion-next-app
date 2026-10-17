@@ -1,0 +1,44 @@
+.usermaindiv {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--google-shadow);
+  transition: 0.5s;
+}
+
+.usermaindiv:hover {
+  background: #f3f4f6;
+  /* background: #ebebeb; */
+}
+
+.usermaindiv:hover .usernamediv {
+  /* color: #f7f4f2; */
+}
+
+.usernamediv {
+  color: var(--card-text);
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.roleDiv {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: white;
+  font-weight: 500;
+  color: var(--badge-bg);
+  box-shadow: var(--google-shadow);
+}
+
+.birthDayGif {
+  position: absolute;
+  /* width: 140px; */
+  width: 95px;
+  height: 140px;
+  max-width: none;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: 2; */
+}

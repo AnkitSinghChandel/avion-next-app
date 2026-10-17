@@ -1,0 +1,3 @@
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+export const SINGLE_UPLOAD_TO_S3 = "SINGLE_UPLOAD_TO_S3";
+export const MULTIPLE_UPLOAD_TO_S3 = "MULTIPLE_UPLOAD_TO_S3";

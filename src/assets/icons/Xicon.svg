@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+  <g id="x-circle" transform="translate(-26.5 -12.5)">
+    <g id="Group_2734" data-name="Group 2734" transform="translate(20 6)">
+      <path id="Path_2071" data-name="Path 2071" d="M9,16.15A.85.85,0,0,1,8.4,14.7l6.3-6.3a.85.85,0,0,1,1.2,1.2L9.6,15.9A.847.847,0,0,1,9,16.15Z" transform="translate(-1.65 -1.65)" fill="#333"/>
+      <path id="Path_2072" data-name="Path 2072" d="M15.3,16.15a.847.847,0,0,1-.6-.249L8.4,9.6A.85.85,0,0,1,9.6,8.4l6.3,6.3a.85.85,0,0,1-.6,1.451Z" transform="translate(-1.65 -1.65)" fill="#333"/>
+    </g>
+  </g>
+</svg>

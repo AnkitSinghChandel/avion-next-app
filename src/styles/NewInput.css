@@ -1,0 +1,70 @@
+/* new input start */
+.asc-input-container {
+  margin-top: 10px !important;
+  position: relative;
+}
+
+.asc-top-label {
+  position: absolute;
+  left: 25px;
+  top: -14px;
+  /* bottom: 36px; */
+  /* background: #fafafa; */
+  background: var(--card-bg);
+  color: var(--badge-bg);
+  padding: 0px 5px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.asc-Normal-Input {
+  width: 100%;
+  height: 57px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1.5px solid #d8cdc2;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+
+  padding-left: 29px;
+  padding-right: 20px;
+}
+
+.asc-Normal-Input:focus {
+  border: 1.5px solid #b89b7a;
+  transition: 0.3s;
+}
+
+#ascNewInput label {
+  /* position: absolute;
+    top: 0;
+    left: 10px;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+    color: #999; */
+}
+/* new input end */
+
+/* Different browsers ke autofill background ko handle karne ke liye */
+/* Chrome, Edge, Brave, Opera, Safari */
+input:-webkit-autofill {
+  /* Background color ko transparent karne ke liye text box shadow */
+  /* -webkit-box-shadow: 0 0 0px 1000px #f7f4f2 inset !important; */
+  -webkit-box-shadow: 0 0 0px 1000px var(--card-bg) inset !important;
+
+  /* Autofill hone ke baad text ka color kya rahega */
+  -webkit-text-fill-color: #4b5966 !important;
+}
+
+/* Firefox */
+input:-moz-autofill {
+  /* Background color ko transparent karne ke liye text box shadow */
+  box-shadow: 0 0 0px 1000px var(--card-bg) inset !important;
+
+  /* Autofill hone ke baad text ka color kya rahega */
+  -webkit-text-fill-color: #4b5966 !important;
+}

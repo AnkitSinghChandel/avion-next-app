@@ -1,0 +1,23 @@
+.addTeamPage {
+  align-items: center;
+  color: #00246a;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.calendarCss {
+  position: absolute;
+  left: 7px;
+  top: 13px;
+  cursor: pointer;
+}
+
+.icons {
+  width: 20px;
+}
+
+.leftComponentCss {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4b5966;
+}
