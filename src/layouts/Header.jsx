@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { clearToken } from "@/src/app/actions/auth";
 import { useRouter, usePathname } from "next/navigation";
 import NextImage from "next/image";
 import Link from "next/link";
@@ -121,6 +122,7 @@ const Header = (props) => {
       });
     }
     // if not timer running then proceed with clear all👇
+    clearToken();
     sessionStorage.clear();
     localStorage.clear();
     router.push("/");

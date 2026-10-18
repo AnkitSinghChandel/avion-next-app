@@ -163,9 +163,9 @@ const SideBar = () => {
           <div>
             <Link
               href={`/profile/${userid}`}
-              className={({ isActive }) => {
-                return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
-              }}
+              className={`sidebar-option ripple ${
+                path === "/profile" ? "selected-sidebar" : ""
+              }`}
               onClick={() => setOpenMenu({})}
             >
               <div

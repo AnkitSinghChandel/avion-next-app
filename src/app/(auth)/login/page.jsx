@@ -84,19 +84,17 @@ const Login = () => {
       localStorage.setItem("token", loginRes.token); // always set on localStorage, comment it if you want keep me logged in feature.
       localStorage.setItem("redrectValue", true);
       // Token ko secure HttpOnly cookie mein save karo
-      saveToken(loginRes.token);
-      // Cookie save hone ke baad redirect karo
-      // saveToken(loginRes.token)
-      //   .then(() => {
-      //     router.replace("/dashboard");
-      //   })
-      //   .catch((error) => {
-      //     console.error("Cookie save failed:", error);
-      //   });
+      saveToken(loginRes.token)
+        .then(() => {
+          router.replace("/dashboard");
+        })
+        .catch((error) => {
+          console.error("Cookie save failed:", error);
+        });
 
       // browser se back button daba ke dobara login me nhi jayga, products-list screen me jate hi apne aap replace yani location hat jayga👇
       // navigate("/dashboard", { replace: true });
-      router.replace("/dashboard");
+      // router.replace("/dashboard");
 
       toast.success({
         description: `${loginRes.data.firstName} Login successfully`,
