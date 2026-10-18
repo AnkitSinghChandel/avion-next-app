@@ -1,11 +1,11 @@
+"use client";
 import { memo } from "react";
-import { Outlet } from "react-router";
 import SideBar from "./SideBar";
 import SideBar2 from "./SideBar2";
 import AppWatchers from "../components/watchers/AppWatchers";
 import ComingSoon from "../components/comingSoon/ComingSoon";
 
-const LayoutWithSidebar = () => {
+const LayoutWithSidebar = ({ children }) => {
   const sidebarOption = Number(localStorage.getItem("sidebarOption") || "1");
 
   return (
@@ -20,7 +20,7 @@ const LayoutWithSidebar = () => {
           padding: "15px clamp(12px, 2vw, 20px)",
         }}
       >
-        <Outlet />
+        {children}
         {/* <Timer /> */}
         {/* <GlobalTimer /> */}
         <AppWatchers />

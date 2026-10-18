@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import NextImage from "next/image";
 import Link from "next/link";
-import "../styles/Header.css";
-import ASC22 from "../assets/images/ASC22.jpg";
-import searchicon from "../assets/icons/search.svg";
-import warningImg from "../assets/icons/warning.svg";
+import "./Header.css";
+import searchicon from "@/src/assets/icons/search.svg";
+import warningImg from "@/src/assets/icons/warning.svg";
 import moment from "moment";
 import Drawer from "./Drawer";
 import { Image, Popover, Tooltip, Dropdown, Skeleton } from "antd";
@@ -258,8 +257,10 @@ const Header = (props) => {
             {/* left component end */}
 
             <div className="flex-grow relative">
-              <img
+              <NextImage
                 src={searchicon}
+                width={15}
+                height={15}
                 className="ascSearchicon absolute top-3 left-3"
                 alt="Search Icon"
               />

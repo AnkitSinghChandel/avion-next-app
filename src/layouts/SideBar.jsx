@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useTransition } from "react";
-import { Link, useLocation, useNavigate, matchPath } from "react-router";
+import { useRouter, usePathname, useParams } from "next/navigation";
 import "../styles/SideBar.css";
 import { Layout, Menu, Tooltip } from "antd";
 import {
@@ -28,8 +28,8 @@ import toast from "../components/notification/CustomToast";
 import { FinIcon } from "../components/customSVG/CustomSVG";
 
 const SideBar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const path = usePathname();
   const deviceType = useDeviceType(); // Store device type in a variable.
   const isWebView = deviceType === "webView";
   const isMobileView = deviceType === "mobileView";
@@ -57,32 +57,26 @@ const SideBar = () => {
 
   // Determine selected menu item based on path
   const selectedKey = (() => {
-    if (location.pathname === "/dashboard") return "1";
-    if (location.pathname.startsWith("/profile")) return "2";
+    if (path === "/dashboard") return "1";
+    if (path.startsWith("/profile")) return "2";
     if (
-      location.pathname === "/teams" ||
-      location.pathname.startsWith("/teams/") ||
-      // location.pathname.endsWith("/edit")
-      matchPath("/teams/:id/edit", location.pathname)
+      path === "/teams" ||
+      path.startsWith("/teams/")
+      // path.endsWith("/edit")
     )
       return "3-1";
-    if (location.pathname === "/users") return "3-2";
+    if (path === "/users") return "3-2";
 
-    if (
-      location.pathname === "/products" ||
-      location.pathname.startsWith("/product/") ||
-      matchPath("/products/:id/edit", location.pathname)
-    )
-      return "4-1";
-    if (location.pathname === "/stock-levels") return "4-2";
+    if (path === "/products" || path.startsWith("/product/")) return "4-1";
+    if (path === "/stock-levels") return "4-2";
 
-    if (location.pathname.startsWith("/suppliers")) return "5-1";
+    if (path.startsWith("/suppliers")) return "5-1";
 
-    if (location.pathname.startsWith("/report")) return "6";
-    if (location.pathname.startsWith("/task")) return "7";
-    if (location.pathname === "/scanner") return "8";
-    if (location.pathname === "/settings") return "100";
-    if (location.pathname === "/asc-folder") return "110";
+    if (path.startsWith("/report")) return "6";
+    if (path.startsWith("/task")) return "7";
+    if (path === "/scanner") return "8";
+    if (path === "/settings") return "100";
+    if (path === "/asc-folder") return "110";
     return "";
   })();
 
@@ -110,7 +104,7 @@ const SideBar = () => {
       icon: <DashboardOutlined />,
       label: "DashBoard",
       className: "ripple custom-class",
-      onClick: () => navigate("/dashboard"),
+      onClick: () => router.push("/dashboard"),
     },
 
     {
@@ -136,7 +130,7 @@ const SideBar = () => {
         </div>
       ),
       className: "ripple absolute! bottom-3 ps-3.25!",
-      onClick: () => navigate(`/profile/${userid}`),
+      onClick: () => router.push(`/profile/${userid}`),
     },
 
     {
@@ -144,7 +138,7 @@ const SideBar = () => {
       icon: <UsergroupAddOutlined />,
       label: "Workspace",
       onTitleClick: () => {
-        setTimeout(() => navigate("/teams"), 200);
+        setTimeout(() => router.push("/teams"), 200);
       },
       children: [
         {
@@ -152,14 +146,14 @@ const SideBar = () => {
           // icon: <UsergroupAddOutlined />,
           label: "Teams",
           className: "ripple",
-          onClick: () => navigate("/teams"),
+          onClick: () => router.push("/teams"),
         },
         {
           key: "3-2",
           // icon: <UserSwitchOutlined />,
           label: "Users",
           className: "ripple",
-          onClick: () => navigate("/users"),
+          onClick: () => router.push("/users"),
         },
       ],
     },
@@ -169,7 +163,7 @@ const SideBar = () => {
       icon: <AppstoreOutlined />,
       label: "Inventory",
       onTitleClick: () => {
-        setTimeout(() => navigate("/products"), 200);
+        setTimeout(() => router.push("/products"), 200);
       },
       children: [
         {
@@ -177,7 +171,7 @@ const SideBar = () => {
           // icon: <UsergroupAddOutlined />,
           label: "Products",
           className: "ripple",
-          onClick: () => navigate("/products"),
+          onClick: () => router.push("/products"),
         },
 
         {
@@ -185,7 +179,7 @@ const SideBar = () => {
           // icon: <UsergroupAddOutlined />,
           label: "Stock Levels",
           className: "ripple",
-          onClick: () => navigate("/stock-levels"),
+          onClick: () => router.push("/stock-levels"),
         },
       ],
     },
@@ -196,9 +190,9 @@ const SideBar = () => {
       label: "Purchasing",
       // disabled: true,
       onTitleClick: () => {
-        setTimeout(() => navigate("/suppliers"), 200);
+        setTimeout(() => router.push("/suppliers"), 200);
         startTransition(() => {
-          // navigate("/suppliers");
+          // router.push("/suppliers");
         });
       },
       children: [
@@ -207,7 +201,7 @@ const SideBar = () => {
           // icon: <UsergroupAddOutlined />,
           label: "Suppliers",
           className: "ripple",
-          onClick: () => navigate("/suppliers"),
+          onClick: () => router.push("/suppliers"),
         },
       ],
     },
@@ -218,7 +212,7 @@ const SideBar = () => {
       label: "Report",
       className: "ripple",
       // disabled: true,
-      // onClick: () => navigate("/report"),
+      // onClick: () => router.push("/report"),
       onClick: () => {
         toast.info({
           description: `Reports module is under development.`,
@@ -231,7 +225,7 @@ const SideBar = () => {
       icon: <ScheduleOutlined />,
       label: "Tasks",
       className: "ripple",
-      onClick: () => navigate("/task"),
+      onClick: () => router.push("/task"),
     },
 
     {
@@ -239,7 +233,7 @@ const SideBar = () => {
       icon: <ScanOutlined />,
       label: "Scanner",
       className: "ripple",
-      onClick: () => navigate("/scanner"),
+      onClick: () => router.push("/scanner"),
     },
 
     {
@@ -247,7 +241,7 @@ const SideBar = () => {
       icon: <SettingOutlined spin style={{ animationDuration: "3s" }} />,
       label: "Settings",
       className: "ripple absolute! bottom-15!",
-      onClick: () => navigate("/settings"),
+      onClick: () => router.push("/settings"),
     },
 
     isAdmin && {
@@ -255,7 +249,7 @@ const SideBar = () => {
       icon: <FolderOpenOutlined />,
       label: "ASC-FOLDER",
       className: "ripple hidde-n!",
-      onClick: () => navigate("/asc-folder"),
+      onClick: () => router.push("/asc-folder"),
     },
   ];
 
@@ -303,7 +297,7 @@ const SideBar = () => {
               <p
                 className="text-[16px] text-(--badge-bg) font-semibold flex justify-center"
                 onClick={() => {
-                  navigate("/dashboard");
+                  router.push("/dashboard");
                 }}
               >
                 {/* <img src="/fin.png" className="w-7.5 h-6" /> */}

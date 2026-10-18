@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useRouter, usePathname, useParams } from "next/navigation";
 import "./AddProduct.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Header from "../../layouts/Header";
@@ -40,9 +40,8 @@ import { CurrencyInput } from "../../components/common/CurrencyInput";
 import BarcodeGenerator from "../../components/Barcode/BarcodeGenerator";
 
 const AddProduct = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
   const params = useParams();
   console.log("param", params.id);
   const isUpdating = Boolean(params.id);
@@ -86,8 +85,7 @@ const AddProduct = () => {
   const handleClose = () => setCancelPopupShow(false);
 
   const handleYes = () => {
-    // history.push("/InvoiceAllList");
-    navigate(-1);
+    router.back();
   };
   const [typeInScreen, setTypeInScreen] = useState("");
   // asc cancel popup end
@@ -97,7 +95,7 @@ const AddProduct = () => {
       setShowLoader(false);
 
       toast.success({ description: `${productName} Added successfully` });
-      navigate("/products");
+      router.push("/products");
 
       dispatch({
         type: ADD_PRODUCT,
@@ -245,7 +243,7 @@ const AddProduct = () => {
       setShowLoader(false);
 
       toast.success({ description: `${productName} Updated successfully` });
-      navigate("/products");
+      router.push("/products");
 
       dispatch({
         type: UPDATE_PRODUCT_BY_ID,
@@ -337,8 +335,7 @@ const AddProduct = () => {
             if (typeInScreen !== "") {
               setCancelPopupShow(true);
             } else {
-              // history.goBack();
-              navigate(-1);
+              router.back();
             }
           }}
         />

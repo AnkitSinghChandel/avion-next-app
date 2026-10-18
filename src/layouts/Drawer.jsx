@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
 import { Drawer, Button } from "antd";
 import "../styles/Drawer.css";
 import useDeviceType from "./useDeviceType";
@@ -23,9 +23,8 @@ import { FinIcon } from "../components/customSVG/CustomSVG";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const MyDrawer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const path = location.pathname;
+  const router = useRouter();
+  const path = usePathname();
   console.log("path", path);
   const deviceType = useDeviceType();
   const [Ankit] = useAutoAnimate();
@@ -89,7 +88,7 @@ const MyDrawer = () => {
               path === "/dashboard" ? "drawer-selectedOption" : "optionText"
             }
             onClick={() => {
-              navigate("/dashboard");
+              router.push("/dashboard");
             }}
           >
             <DashboardOutlined /> DashBoard
@@ -108,7 +107,7 @@ const MyDrawer = () => {
               paddingLeft: "4px",
             }}
             onClick={() => {
-              navigate(`/profile/${userID}`);
+              router.push(`/profile/${userID}`);
             }}
           >
             {/* <ContactsOutlined /> Profile */}
@@ -169,7 +168,7 @@ const MyDrawer = () => {
                         : "optionText"
                     }
                     onClick={() => {
-                      navigate("/teams");
+                      router.push("/teams");
                     }}
                   >
                     <span className="submenu-dot"></span>
@@ -183,7 +182,7 @@ const MyDrawer = () => {
                       path === "/users" ? "drawer-selectedOption" : "optionText"
                     }
                     onClick={() => {
-                      navigate("/users");
+                      router.push("/users");
                     }}
                   >
                     <span className="submenu-dot"></span>
@@ -233,7 +232,7 @@ const MyDrawer = () => {
                         : "optionText"
                     }
                     onClick={() => {
-                      navigate("/products");
+                      router.push("/products");
                     }}
                   >
                     <span className="submenu-dot"></span>
@@ -249,7 +248,7 @@ const MyDrawer = () => {
                         : "optionText"
                     }
                     onClick={() => {
-                      navigate("/stock-levels");
+                      router.push("/stock-levels");
                     }}
                   >
                     <span className="submenu-dot"></span>
@@ -296,7 +295,7 @@ const MyDrawer = () => {
                         : "optionText"
                     }
                     onClick={() => {
-                      navigate("/suppliers");
+                      router.push("/suppliers");
                     }}
                   >
                     <span className="submenu-dot"></span>
@@ -312,7 +311,7 @@ const MyDrawer = () => {
               path === "/task" ? "drawer-selectedOption" : "optionText"
             }
             onClick={() => {
-              navigate("/task");
+              router.push("/task");
             }}
           >
             <ScheduleOutlined /> Tasks
@@ -323,7 +322,7 @@ const MyDrawer = () => {
               path === "/scanner" ? "drawer-selectedOption" : "optionText"
             }
             onClick={() => {
-              navigate("/scanner");
+              router.push("/scanner");
             }}
           >
             <ScanOutlined /> Scanner
@@ -335,7 +334,7 @@ const MyDrawer = () => {
             }
             style={{ position: "absolute", bottom: "65px", width: "80%" }}
             onClick={() => {
-              navigate("/settings");
+              router.push("/settings");
             }}
           >
             <SettingOutlined spin style={{ animationDuration: "3s" }} />

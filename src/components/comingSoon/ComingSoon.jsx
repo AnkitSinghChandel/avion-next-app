@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useRouter, usePathname, useParams } from "next/navigation";
 import { WechatWorkOutlined, CloseOutlined } from "@ant-design/icons";
 
 const ComingSoon = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const isLoggedIn = localStorage.getItem("token");
   const [showPopup, setShowPopup] = useState(false);
@@ -73,7 +72,7 @@ const ComingSoon = () => {
                 <p
                   className="mt-5 py-1.75 m-auto border rounded-2xl text-center w-25 text-sm text-white bg-[#6D5DFB] pointer shadow-lg"
                   onClick={() => {
-                    navigate("/settings");
+                    router.push("/settings");
                     setTimeout(() => {
                       setShowPopup(false);
                     }, 500);

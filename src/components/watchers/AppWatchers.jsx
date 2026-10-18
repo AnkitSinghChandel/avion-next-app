@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
 import DisableContextMenu from "./DisableContextMenu";
 import SendingMail from "./SendingMail";
 

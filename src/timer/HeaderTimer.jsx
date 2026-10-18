@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
 import { Tooltip, Popover, FloatButton } from "antd";
 import stopIcon from "../assets/icons/stop-circle.svg";
 import "../styles/Timer.css";
@@ -25,11 +25,9 @@ import toast from "../components/notification/CustomToast";
 import { TIMER_START, TIMER_STOP } from "../redux/constants/productType";
 
 const HeaderTimer = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
   const [Ankit] = useAutoAnimate();
-  console.log("location", location);
 
   const userID = localStorage.getItem("userid");
   const timerProductID = localStorage.getItem("timerProductID");
@@ -242,7 +240,7 @@ const HeaderTimer = () => {
             className="headerTimerButton"
             // onClick={stopTimer}
             onClick={() => {
-              navigate(`/product/${timerProductID}`);
+              router.push(`/product/${timerProductID}`);
               stopTimer();
             }}
             // disabled={!isTimerRunning}

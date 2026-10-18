@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
 import warningIcon from "../../assets/icons/warning.svg";
-import Footer from "../../layouts/Footer";
+import Footer from "../../../layouts/Footer";
 import {
   fetchAllCartProducts,
   fetchAllWishList,
-} from "../../redux/actions/productAction";
+} from "../../../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserOutlined,
@@ -21,7 +21,7 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   formatCurrency,
   universalFormatCurrency,
-} from "../../utils/formatCurrency";
+} from "../../../utils/formatCurrency";
 
 const WishListProducts = () => {
   const navigate = useNavigate();
