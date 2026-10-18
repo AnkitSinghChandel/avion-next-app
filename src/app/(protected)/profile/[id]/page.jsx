@@ -1,6 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { useRouter, usePathname, useParams } from "next/navigation";
+import {
+  useRouter,
+  usePathname,
+  useParams,
+  useSearchParams,
+} from "next/navigation";
 import "./Profile.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Header from "@/src/layouts/Header";
@@ -56,13 +61,12 @@ import { useTranslation } from "react-i18next";
 const Profile = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const location = usePathname();
+  const path = usePathname();
+  const searchParams = useSearchParams();
   const { id } = useParams();
   let blocker = { state: "state" };
 
-  // const queryParams = new URLSearchParams(window.location.search);
-  const queryParams = new URLSearchParams(location.search);
-  const getMode = queryParams.get("mode");
+  const getMode = searchParams.get("mode");
   const isScannerMode = getMode === "scanner";
   // if user make url mismatch
   useEffect(() => {
