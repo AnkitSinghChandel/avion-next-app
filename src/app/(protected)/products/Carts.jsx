@@ -3,7 +3,7 @@ import { useRouter, usePathname, useParams } from "next/navigation";
 import {
   fetchAllCartProducts,
   fetchAllWishList,
-} from "../../redux/actions/productAction";
+} from "@/src/redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserOutlined,
@@ -15,7 +15,7 @@ import {
   ShoppingOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-import "../../styles/cart.css";
+import "./cart.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const Carts = () => {

@@ -9,8 +9,8 @@ import warningImg from "@/src/assets/icons/warning.svg";
 import moment from "moment";
 import Drawer from "./Drawer";
 import { Image, Popover, Tooltip, Dropdown, Skeleton } from "antd";
-import ProductsCategory from "@/src/app/products/ProductsCategory";
-import Carts from "@/src/app/products/Carts";
+import ProductsCategory from "@/src/app/(protected)/products/ProductsCategory";
+import Carts from "@/src/app/(protected)/products/Carts";
 import useDeviceType from "./useDeviceType";
 import {
   UserOutlined,

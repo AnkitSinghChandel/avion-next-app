@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
 const FirstHome = () => {
+  const router = useRouter();
   return (
     <div>
       {/* <Image
@@ -29,7 +32,12 @@ const FirstHome = () => {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded transition duration-300 shadow-lg uppercase tracking-wider">
+            <button
+              className="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded transition duration-300 shadow-lg uppercase tracking-wider"
+              onClick={() => {
+                router.push("/login");
+              }}
+            >
               Our Projects
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-black font-bold px-6 py-3 md:px-8 md:py-4 text-sm md:text-base rounded transition duration-300 uppercase tracking-wider">

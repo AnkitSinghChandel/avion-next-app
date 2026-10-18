@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import "../../styles/SelectBox.css";
-import DownArrowOption from "../../assets/icons/DownArrowOption.svg";
-import ASC22 from "../../assets/images/ASC22.jpg";
-import Xicon from "../../assets/icons/Xicon.svg";
-import searchicon from "../../assets/icons/search.svg";
-import box from "../../assets/images/box(1).png";
-import box2 from "../../assets/images/box(2).png";
+import DownArrowOption from "@/src/assets/icons/DownArrowOption.svg";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import NoData from "../../components/common/NoData";
-import SelectBox from "../../components/common/SelectBox";
+import NoData from "@/src/components/common/NoData";
+import SelectBox from "@/src/components/common/SelectBox";
 
 const ProductsCategory = () => {
   const [Ankit] = useAutoAnimate();

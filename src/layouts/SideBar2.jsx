@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 import {
   LeftCircleOutlined,
   RightCircleOutlined,
@@ -32,8 +33,8 @@ import { FinIcon } from "../components/customSVG/CustomSVG";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const SideBar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const path = usePathname();
   const deviceType = useDeviceType(); // Store device type in a variable.
   const isWebView = deviceType === "webView";
   const isMobileView = deviceType === "mobileView";
@@ -52,20 +53,17 @@ const SideBar = () => {
   const [suppliersOpen, setSuppliersOpen] = useState(false);
 
   useEffect(() => {
-    if (
-      location.pathname.startsWith("/teams") ||
-      location.pathname.startsWith("/users")
-    ) {
+    if (path.startsWith("/teams") || path.startsWith("/users")) {
       setOpenMenu({ menu1: true });
     } else if (
-      location.pathname.startsWith("/products") ||
-      location.pathname.startsWith("/stock-levels")
+      path.startsWith("/products") ||
+      path.startsWith("/stock-levels")
     ) {
       setOpenMenu({ menu2: true });
-    } else if (location.pathname.startsWith("/suppliers")) {
+    } else if (path.startsWith("/suppliers")) {
       setOpenMenu({ menu3: true });
     }
-  }, [location.pathname]);
+  }, [path]);
 
   if (isMobileView || isTabView) {
     return null;
@@ -102,7 +100,7 @@ const SideBar = () => {
               <p
                 className="text-[16px] text-(--badge-bg) font-semibold flex justify-center"
                 onClick={() => {
-                  navigate("/dashboard");
+                  router.push("/dashboard");
                 }}
               >
                 {/* <img src="/fin.png" className="w-7.5 h-6" /> */}
@@ -145,8 +143,8 @@ const SideBar = () => {
 
           {/* ========= Dashboard option ========= */}
           <div>
-            <NavLink
-              to="/dashboard"
+            <Link
+              hef="/dashboard"
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
               }}
@@ -158,13 +156,13 @@ const SideBar = () => {
                 <DashboardOutlined />
                 {sideBarOpen ? "Dashboard" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           {/* ========= Profile option ========= */}
           <div>
-            <NavLink
-              to={`/profile/${userid}`}
+            <Link
+              href={`/profile/${userid}`}
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
               }}
@@ -176,7 +174,7 @@ const SideBar = () => {
                 <ContactsOutlined />
                 {sideBarOpen ? "Profile" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           <p className={`sidebar-category ${!sideBarOpen && "scale-0 hidden"}`}>
@@ -209,8 +207,8 @@ const SideBar = () => {
                 },
                 children: (
                   <div className="space-y-1">
-                    <NavLink
-                      to="/teams"
+                    <Link
+                      href="/teams"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -220,10 +218,10 @@ const SideBar = () => {
                     >
                       <UserOutlined />
                       {sideBarOpen ? "Teams" : "T"}
-                    </NavLink>
+                    </Link>
 
-                    <NavLink
-                      to="/teams/create"
+                    <Link
+                      href="/teams/create"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -232,7 +230,7 @@ const SideBar = () => {
                       }}
                     >
                       Add Team
-                    </NavLink>
+                    </Link>
                   </div>
                 ),
               },
@@ -253,8 +251,8 @@ const SideBar = () => {
                 },
                 children: (
                   <div className="space-y-1">
-                    <NavLink
-                      to="/products"
+                    <Link
+                      href="/products"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -263,10 +261,10 @@ const SideBar = () => {
                       }}
                     >
                       Products
-                    </NavLink>
+                    </Link>
 
-                    <NavLink
-                      to="/products/create"
+                    <Link
+                      href="/products/create"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -275,7 +273,7 @@ const SideBar = () => {
                       }}
                     >
                       Add Products
-                    </NavLink>
+                    </Link>
                   </div>
                 ),
               },
@@ -296,8 +294,8 @@ const SideBar = () => {
                 },
                 children: (
                   <div className="space-y-1">
-                    <NavLink
-                      to="/suppliers"
+                    <Link
+                      href="/suppliers"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -306,10 +304,10 @@ const SideBar = () => {
                       }}
                     >
                       Suppliers
-                    </NavLink>
+                    </Link>
 
-                    <NavLink
-                      to="/suppliers/create"
+                    <Link
+                      href="/suppliers/create"
                       end
                       className={({ isActive }) => {
                         return `sidebar-option ps-3 ripple ${
@@ -318,7 +316,7 @@ const SideBar = () => {
                       }}
                     >
                       Add Suppliers
-                    </NavLink>
+                    </Link>
                   </div>
                 ),
               },
@@ -365,8 +363,8 @@ const SideBar = () => {
             >
               <div className="pl--6 px-1 mt-1 space-y-1 submenu-options">
                 <div>
-                  <NavLink
-                    to={`/users`}
+                  <Link
+                    href={`/users`}
                     className={({ isActive }) =>
                       `sidebar-option duration-500 ripple ${isActive ? "selected-sidebar" : ""}`
                     }
@@ -380,12 +378,12 @@ const SideBar = () => {
                       {/* <UserOutlined /> */}
                       {sideBarOpen ? "Users" : ""}
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
 
                 <div>
-                  <NavLink
-                    to={`/teams`}
+                  <Link
+                    href={`/teams`}
                     // end // exact route match
                     className={({ isActive }) =>
                       `sidebar-option duration-500 ripple ${isActive ? "selected-sidebar" : ""}`
@@ -400,7 +398,7 @@ const SideBar = () => {
                       {/* <UserAddOutlined /> */}
                       {sideBarOpen ? "Teams" : ""}
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -445,11 +443,11 @@ const SideBar = () => {
             >
               <div className="pl--6 px-1 mt-1 space-y-1 submenu-options">
                 <div>
-                  <NavLink
-                    to={`/products`}
+                  <Link
+                    href={`/products`}
                     // end // exact route match
                     className={({ isActive }) => {
-                      const isEditPage = location.pathname.endsWith("/edit");
+                      const isEditPage = path.endsWith("/edit");
                       return `sidebar-option duration-500 ripple ${isActive ? "selected-sidebar" : ""}`;
                     }}
                     onClick={() => {
@@ -462,12 +460,12 @@ const SideBar = () => {
                       {/* <UserOutlined /> */}
                       {sideBarOpen ? "Products" : ""}
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
 
                 <div>
-                  <NavLink
-                    to="/stock-levels"
+                  <Link
+                    href="/stock-levels"
                     className={({ isActive }) => {
                       return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
                     }}
@@ -481,7 +479,7 @@ const SideBar = () => {
                       {/* <HddOutlined /> */}
                       {sideBarOpen ? "Stock Levels" : ""}
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -526,8 +524,8 @@ const SideBar = () => {
             >
               <div className="pl--6 px-1 mt-1 space-y-1 submenu-options">
                 <div>
-                  <NavLink
-                    to={`/suppliers`}
+                  <Link
+                    href={`/suppliers`}
                     // end // exact route match
                     className={({ isActive }) => {
                       return `sidebar-option duration-500 ripple ${isActive ? "selected-sidebar" : ""}`;
@@ -542,7 +540,7 @@ const SideBar = () => {
                       {/* <UserOutlined /> */}
                       {sideBarOpen ? "Suppliers" : ""}
                     </div>
-                  </NavLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -554,8 +552,8 @@ const SideBar = () => {
 
           {/* ========= Report option ========= */}
           <div>
-            <NavLink
-              to="#"
+            <Link
+              href="#"
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar-2" : ""}`;
               }}
@@ -572,13 +570,13 @@ const SideBar = () => {
                 <BarChartOutlined />
                 {sideBarOpen ? "Reports" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           {/* ========= Task option ========= */}
           <div>
-            <NavLink
-              to="/task"
+            <Link
+              href="/task"
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
               }}
@@ -590,13 +588,13 @@ const SideBar = () => {
                 <ScheduleOutlined />
                 {sideBarOpen ? "Tasks" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           {/* ========= Scanner option ========= */}
           <div>
-            <NavLink
-              to="/scanner"
+            <Link
+              href="/scanner"
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
               }}
@@ -608,13 +606,13 @@ const SideBar = () => {
                 <ScanOutlined />
                 {sideBarOpen ? "Scanner" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           {/* ========= Settings option ========= */}
           <div>
-            <NavLink
-              to="/settings"
+            <Link
+              href="/settings"
               className={({ isActive }) => {
                 return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
               }}
@@ -626,14 +624,14 @@ const SideBar = () => {
                 <SettingOutlined spin style={{ animationDuration: "3s" }} />
                 {sideBarOpen ? "Settings" : ""}
               </div>
-            </NavLink>
+            </Link>
           </div>
 
           {/* ========= ASC-FOLDER option ========= */}
           {isAdmin && (
             <div>
-              <NavLink
-                to="/asc-folder"
+              <Link
+                href="/asc-folder"
                 className={({ isActive }) => {
                   return `sidebar-option ripple ${isActive ? "selected-sidebar" : ""}`;
                 }}
@@ -645,7 +643,7 @@ const SideBar = () => {
                   <FolderOpenOutlined />
                   {sideBarOpen ? "ASC-FOLDER" : ""}
                 </div>
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>

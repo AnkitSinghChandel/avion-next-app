@@ -81,7 +81,7 @@ const Login = () => {
       localStorage.setItem("userLastName", loginRes.data.lastName);
       localStorage.setItem("userImage", loginRes.data.image);
       localStorage.setItem("userid", loginRes.data.userId);
-      localStorage.setItem("token", loginRes.token_no); // always set on localStorage, comment it if you want keep me logged in feature.
+      localStorage.setItem("token", loginRes.token); // always set on localStorage, comment it if you want keep me logged in feature.
       localStorage.setItem("redrectValue", true);
       // Token ko secure HttpOnly cookie mein save karo
       saveToken(loginRes.token);
