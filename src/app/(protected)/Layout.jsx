@@ -12,7 +12,7 @@ export default async function ProtectedLayout({ children }) {
     redirect("/");
   }
 
-  // return <LayoutWithSidebar>{children}</LayoutWithSidebar>
+  // return <LayoutWithSidebar>{children}</LayoutWithSidebar>;
   return (
     <LayoutWithSidebar>
       <Suspense fallback={<DashboardFallback />}>{children}</Suspense>
