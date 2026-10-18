@@ -47,7 +47,7 @@ function AppFallback() {
         justifyContent: "center",
       }}
     >
-      <Loader />
+      Loading...
     </div>
   );
 }
