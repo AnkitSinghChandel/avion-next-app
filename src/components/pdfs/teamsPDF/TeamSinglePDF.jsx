@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import dayjs from "dayjs";
@@ -14,9 +13,9 @@ import {
   PDFViewer,
   PDFDownloadLink,
 } from "@react-pdf/renderer";
-import Pdficon from "../../../assets/icons/pdf-icon.svg";
+import Pdficon from "@/src/assets/icons/pdf-icon.svg";
 import { LoadingOutlined } from "@ant-design/icons";
-import { universalFormatCurrency } from "../../../utils/formatCurrency";
+import { universalFormatCurrency } from "@/src/utils/formatCurrency";
 
 // PDF Document Component
 const TeamSinglePDF = ({ teamListPDFData = [] }) => {

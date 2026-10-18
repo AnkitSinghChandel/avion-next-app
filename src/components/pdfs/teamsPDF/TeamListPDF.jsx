@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { styles } from "./TeamListPDFStyle";
@@ -13,7 +12,7 @@ import {
   PDFViewer,
   PDFDownloadLink,
 } from "@react-pdf/renderer";
-import Pdficon from "../../../assets/icons/pdf-icon.svg";
+import Pdficon from "@/src/assets/icons/pdf-icon.svg";
 import { LoadingOutlined } from "@ant-design/icons";
 
 // PDF Document Component
