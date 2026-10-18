@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "animate.css";
 import StoreProvider from "./StoreProvider";
+import { Suspense } from "react";
+import Loader from "@/src/components/common/Loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +28,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <StoreProvider>{children}</StoreProvider>
+        {/* <StoreProvider>{children}</StoreProvider> */}
+        <StoreProvider>
+          <Suspense fallback={<AppFallback />}>{children}</Suspense>
+        </StoreProvider>
       </body>
     </html>
+  );
+}
+
+function AppFallback() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Loader />
+    </div>
   );
 }
