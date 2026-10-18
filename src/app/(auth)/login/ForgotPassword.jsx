@@ -65,7 +65,7 @@ const ForgotPassword = (props) => {
   return (
     <div id="">
       <Modal
-        {...props}
+        
         // title={props.title}
         title={
           <div className="flex gap-3 items-center">
