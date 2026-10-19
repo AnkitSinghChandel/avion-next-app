@@ -18,8 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Avion",
+  // title: "Avion",
+  title: process.env.NEXT_PUBLIC_TITLE || "Avion",
   description: "Enterprise operations platform",
+  icons: {
+    icon: "/avion.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
