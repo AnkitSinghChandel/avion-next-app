@@ -10,7 +10,7 @@ export const NextImagePreview = (props) => {
   const [preview, setPreview] = useState(false);
 
   return (
-    <div>
+    <div className="group relative inline-block">
       <Image
         src={(props?.image || localAvatar).trim()}
         alt="image"
@@ -25,11 +25,7 @@ export const NextImagePreview = (props) => {
           // 👇 Parent ka style yaha hoga
           ...props.style,
         }}
-        className={`userImg ${props?.className}`}
-        // classNames={{
-        //   // cover: "image-cover",
-        //   cover: "rounded-full",
-        // }}
+        className={`userImg pointer transition duration-200 hover:brightness-75 ${props?.className}`}
         styles={{
           cover: {
             borderRadius: "50%",
@@ -38,16 +34,25 @@ export const NextImagePreview = (props) => {
         onClick={() => setPreview(true)}
       />
 
+      <span
+        onClick={() => setPreview(true)}
+        className="absolute inset-0 flex pointer items-center justify-center
+      rounded-full bg-black/30 text-sm text-white tracking-wider
+      opacity-0 transition-opacity group-hover:opacity-100"
+      >
+        Preview
+      </span>
+
       {preview && (
         <div
           onClick={() => setPreview(false)}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 p-4"
         >
           <button
             type="button"
             aria-label="Close image preview"
             onClick={() => setPreview(false)}
-            className="absolute right-6 top-4 text-4xl text-white"
+            className="absolute right-6 top-4 text-4xl text-white pointer"
           >
             &times;
           </button>
