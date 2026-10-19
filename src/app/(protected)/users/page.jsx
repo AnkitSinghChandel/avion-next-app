@@ -20,6 +20,7 @@ import {
 import { fetchAllUsers } from "@/src/redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
+import { NextImagePreview } from "@/src/components/imagePreview/NextImagePreview";
 import { BigImageAvatar } from "@/src/components/common/ImageAvatar";
 import { BigInitialAvatar } from "@/src/components/common/InitialAvatar";
 import CurrentWeekDates from "@/src/components/datePicker/CurrentWeekDates";
@@ -196,7 +197,7 @@ const UsersList = () => {
                     )}
 
                     {item?.image ? (
-                      <BigImageAvatar
+                      <NextImagePreview
                         className="rounded-full object-cover w-[70px] h-[70px]"
                         image={item.image}
                       />

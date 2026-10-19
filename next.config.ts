@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "your-cdn.example.com",
+        hostname: "s3.spire-solutions-1.res.trans-ix.whitesky.cloud",
       },
     ],
   },
