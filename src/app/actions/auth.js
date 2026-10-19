@@ -20,12 +20,18 @@ export const saveToken = async (token) => {
   return { success: true };
 };
 
+export const getIsToken = async () => {
+  const cookieStore = await cookies();
+  return !!cookieStore.get("token")?.value; // true / false
+};
+
 export const getToken = async () => {
   const cookieStore = await cookies();
-  return !!cookieStore.get("token")?.value;
+  return cookieStore.get("token")?.value ?? null; // actual token
 };
 
 export const clearToken = async () => {
   const cookieStore = await cookies();
   cookieStore.delete("token");
+  return { success: true };
 };
