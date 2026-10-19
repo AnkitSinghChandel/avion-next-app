@@ -1,13 +1,15 @@
+"use client";
 import React, { useEffect, useState, useRef } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
-import "../../styles/ProductsList.css";
-import Header from "../../layouts/Header";
-import Footer from "../../layouts/Footer";
-import WarningPopup from "../../components/dialogs/WarningPopup";
+import NextImage from "next/image";
+import { useRouter, useParams } from "next/navigation";
+import "./ProductsList.css";
+import Header from "@/src/layouts/Header";
+import Footer from "@/src/layouts/Footer";
+import WarningPopup from "@/src/components/dialogs/WarningPopup";
 import {
   formatCurrency,
   universalFormatCurrency,
-} from "../../utils/formatCurrency";
+} from "@/src/utils/formatCurrency";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Rate, Tooltip, Skeleton, Pagination } from "antd";
 import {
@@ -18,23 +20,22 @@ import {
   HeartFilled,
   PlusOutlined,
 } from "@ant-design/icons";
-import NoData from "../../components/common/NoData";
-import Loader from "../../components/common/Loader";
-import { SpinnerLoader } from "../../components/common/MultiLoader";
-import { CustomLoader } from "../../components/customSVG/CustomLoader";
+import NoData from "@/src/components/common/NoData";
+import Loader from "@/src/components/common/Loader";
+import { SpinnerLoader } from "@/src/components/common/MultiLoader";
+import { CustomLoader } from "@/src/components/customSVG/CustomLoader";
 import {
   fetchAllProducts,
   deleteProductById,
   addReview,
   addToWishList,
-} from "../../redux/actions/productAction";
+} from "@/src/redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "../../components/notification/CustomToast";
+import toast from "@/src/components/notification/CustomToast";
 
 const ProductsList = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
   const params = useParams();
   console.log("param", params.id);
   const [Ankit] = useAutoAnimate();
@@ -81,8 +82,7 @@ const ProductsList = () => {
   const handleClose = () => setCancelPopupShow(false);
 
   const handleYes = () => {
-    // history.push("/InvoiceAllList");
-    navigate(-1);
+    router.back();
   };
   const [typeInScreen, setTypeInScreen] = useState("");
   // asc cancel popup end
@@ -194,7 +194,7 @@ const ProductsList = () => {
           <div
             className="add-product ascButton ripple pointer ms-auto mt-8 w-full! sm:w-40!"
             onClick={() => {
-              navigate("/products/create");
+              router.push("/products/create");
             }}
           >
             <PlusOutlined className="pe-1" />
@@ -225,13 +225,15 @@ const ProductsList = () => {
                     <div
                       className="productImage rounded-lg pointer"
                       onClick={() => {
-                        navigate(`/product/${item.productId}`);
+                        router.push(`/product/${item.productId}`);
                       }}
                     >
                       {isLoading && <Skeleton.Image active />}
-                      <img
+                      <NextImage
                         src={item.productImage}
                         alt="products"
+                        width={198}
+                        height={132}
                         className="rounded-lg w-full aspect-3/2 object-cover"
                         onLoad={() => {
                           // setImgLoading(false);
@@ -318,7 +320,7 @@ const ProductsList = () => {
                             className="bg-blue-200 text-(--badge-text) text-[14px] font-medium rounded-xl ps- w-full max-w-full p-1 pointer ascButton"
                             onClick={() => {
                               if (!isAdmin) return;
-                              navigate(`/products/${item.productId}/edit`);
+                              router.push(`/products/${item.productId}/edit`);
                             }}
                           >
                             <span className="ps-0">

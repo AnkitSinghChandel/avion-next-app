@@ -1,43 +1,45 @@
+"use client";
 import React, { useState, useEffect, useRef } from "react";
+import NextImage from "next/image";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import "./AddProduct.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import Header from "../../layouts/Header";
-import WarningPopup from "../../components/dialogs/WarningPopup";
-import addicon from "../../assets/icons/addicon.svg";
-import singleUser from "../../assets/icons/singleUser.svg";
-import setting from "../../assets/icons/setting.svg";
-import product from "../../assets/icons/product.svg";
-import ASC22 from "../../assets/images/ASC22.jpg";
-import DownArrowOption from "../../assets/icons/DownArrowOption.svg";
-import Xicon from "../../assets/icons/Xicon.svg";
-import searchicon from "../../assets/icons/search.svg";
-import calendarIcon from "../../assets/icons/calendarIcon.svg";
-import doubleUser from "../../assets/icons/doubleUser.svg";
-import { generateSvg } from "./generateSvg";
+import Header from "@/src/layouts/Header";
+import WarningPopup from "@/src/components/dialogs/WarningPopup";
+import addicon from "@/src/assets/icons/addicon.svg";
+import singleUser from "@/src/assets/icons/singleUser.svg";
+import setting from "@/src/assets/icons/setting.svg";
+import product from "@/src/assets/icons/product.svg";
+import ASC22 from "@/src/assets/images/ASC22.jpg";
+import DownArrowOption from "@/src/assets/icons/DownArrowOption.svg";
+import Xicon from "@/src/assets/icons/Xicon.svg";
+import searchicon from "@/src/assets/icons/search.svg";
+import calendarIcon from "@/src/assets/icons/calendarIcon.svg";
+import doubleUser from "@/src/assets/icons/doubleUser.svg";
+import { generateSvg } from "../generateSvg";
 import {
   addProduct,
   fetchProductById,
   updateProductById,
   checkProductCode,
-} from "../../redux/actions/productAction";
-import { singleUploadToS3 } from "../../redux/actions/commonAction";
+} from "@/src/redux/actions/productAction";
+import { singleUploadToS3 } from "@/src/redux/actions/commonAction";
 import {
   ADD_PRODUCT,
   UPDATE_PRODUCT_BY_ID,
-} from "../../redux/constants/productType";
+} from "@/src/redux/constants/productType";
 import { useSelector, useDispatch } from "react-redux";
 import { Row, Col, Spin, ColorPicker, Button, Input } from "antd";
-import toast from "../../components/notification/CustomToast";
+import toast from "@/src/components/notification/CustomToast";
 import moment from "moment";
-import NoData from "../../components/common/NoData";
-import useDeviceType from "../../layouts/useDeviceType";
+import NoData from "@/src/components/common/NoData";
+import useDeviceType from "@/src/layouts/useDeviceType";
 import {
   AddButton,
   CancelButton,
-} from "../../components/buttons/GlobalButtons";
-import { CurrencyInput } from "../../components/common/CurrencyInput";
-import BarcodeGenerator from "../../components/Barcode/BarcodeGenerator";
+} from "@/src/components/buttons/GlobalButtons";
+import { CurrencyInput } from "@/src/components/common/CurrencyInput";
+import BarcodeGenerator from "@/src/components/Barcode/BarcodeGenerator";
 
 const AddProduct = () => {
   const router = useRouter();
@@ -359,9 +361,11 @@ const AddProduct = () => {
               </div>
             ) : (
               <div className="flex gap-3 justify-center pe-">
-                <img
+                <NextImage
                   className="icons mx-"
                   src={btnHover ? addicon : doubleUser}
+                  width={20}
+                  height={17}
                   alt=""
                 />
                 {isUpdating ? "Update Product" : "Add Product"}
@@ -398,7 +402,7 @@ const AddProduct = () => {
             >
               {/* no need to use ref if we use setting img under label */}
               <label>
-                <img src={setting} alt="" width={20} />
+                <NextImage src={setting} alt="" width={20} />
                 <input
                   type="file"
                   ref={hiddenFileInput}
@@ -426,15 +430,17 @@ const AddProduct = () => {
               {/* circle input img start */}
               <div className="circle-input-img m-auto">
                 {productImage ? (
-                  <img
+                  <NextImage
                     src={productImage}
                     alt=""
+                    width={100}
+                    height={100}
                     className="selectedImg"
                     onClick={handleClick}
                   />
                 ) : (
                   <>
-                    <img
+                    <NextImage
                       src={product}
                       alt=""
                       width={60}

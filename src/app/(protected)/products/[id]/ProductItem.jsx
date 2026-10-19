@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router";
-import "../../styles/ProductsList.css";
+import "../ProductsList.css";
 import Header from "../../layouts/Header";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Flex, Rate, Skeleton } from "antd";
