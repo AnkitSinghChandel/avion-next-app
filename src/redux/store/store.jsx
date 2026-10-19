@@ -8,7 +8,7 @@ import emailReducer from "../reducer/emailReducer";
 import commonReducer from "../reducer/commonReducer";
 import dashBoardReducer from "../reduxToolkit/dashBoardSlice";
 
-export const store = configureStore({
+export const reduxStore = configureStore({
   reducer: {
     user: userReducer,
     team: teamReducer,
