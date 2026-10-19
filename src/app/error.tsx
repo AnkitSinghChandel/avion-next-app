@@ -1,6 +1,19 @@
 "use client";
 
-export default function Error({ error, reset }) {
+type typeProps = {
+  title: string;
+  age: number;
+  isActive: boolean;
+};
+
+export default function ErrorPage({
+  error,
+  reset,
+}: {
+  error: Error;
+  data: object;
+  reset: () => void;
+}) {
   return (
     <div style={{ padding: 40, textAlign: "center" }}>
       <h2>Kuch galat ho gaya</h2>
