@@ -34,7 +34,10 @@ const WarningPopup = (props) => {
           footer: "",
         }}
         footer={[
-          <div className="flex flex-wrap-reverse justify-center gap-5 w-full">
+          <div
+            className="flex flex-wrap-reverse justify-center gap-5 w-full"
+            key="footer"
+          >
             <Button
               key="back"
               onClick={props.onCancel}

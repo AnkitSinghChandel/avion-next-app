@@ -5,7 +5,6 @@ import "./globals.css";
 import "animate.css";
 import StoreProvider from "./StoreProvider";
 import { Suspense } from "react";
-import Loader from "@/src/components/common/Loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
