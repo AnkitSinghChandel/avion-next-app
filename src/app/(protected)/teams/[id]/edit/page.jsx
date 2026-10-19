@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import NextImage from "next/image";
 import { useRouter, useParams, usePathname } from "next/navigation";
 import "./AddTeam.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -317,7 +318,7 @@ const AddTeam = () => {
               </div>
             ) : (
               <div className="flex gap-3 justify-center pe-">
-                <img
+                <NextImage
                   className="icons mx-"
                   src={btnHover ? addicon : doubleUser}
                   alt=""
@@ -400,7 +401,7 @@ const AddTeam = () => {
                   style={{ position: "unset" }}
                 >
                   <div className="selectBoxInput px-2 mx-2">
-                    <img
+                    <NextImage
                       src={searchicon}
                       className="ascSearchicon"
                       alt="Search Icon"
@@ -446,7 +447,7 @@ const AddTeam = () => {
                                 setOptionsShow(false);
                               }}
                             >
-                              <img
+                              <NextImage
                                 src={item.image}
                                 alt=""
                                 className="option-img"
@@ -575,7 +576,7 @@ const AddTeam = () => {
               variant="borderless"
               // prefix={<img src={calendarIcon} alt="calendar" />}
               suffixIcon={
-                <img
+                <NextImage
                   className="pointer icon"
                   src={calendarIcon}
                   alt="calendar"

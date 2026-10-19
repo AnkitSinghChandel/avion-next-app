@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import NextImage from "next/image";
 import moment from "moment";
 import { styles } from "./TeamListPDFStyle";
 import {
@@ -237,7 +238,7 @@ export const TeamListPDFDownload = ({ teamListPDFData = [] }) => {
         fileName="Avion-TeamList.pdf"
       >
         {({ loading }) =>
-          loading ? <LoadingOutlined /> : <img src={Pdficon} alt="" />
+          loading ? <LoadingOutlined /> : <NextImage src={Pdficon} alt="" />
         }
       </PDFDownloadLink>
     </>

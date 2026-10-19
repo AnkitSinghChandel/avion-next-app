@@ -426,9 +426,11 @@ const Header = (props) => {
               >
                 <div className="relative">
                   {isBirthdayToday && (
-                    <img
+                    <NextImage
                       src="/circle-waves.gif"
                       alt=""
+                      width={95}
+                      height={140}
                       aria-hidden="true"
                       className="birthDayGif"
                     />
@@ -443,7 +445,7 @@ const Header = (props) => {
                       {imgLoading && (
                         <Skeleton.Avatar active shape="circle" size={70} />
                       )}
-                      <img
+                      <NextImage
                         src={JSON.parse(authentication)?.image}
                         alt=""
                         className="userImg pointer relative" // relative for birthDayGif animation

@@ -499,7 +499,7 @@ const TeamsList = () => {
 
                   <td style={{ width: "50px" }}>
                     <Tooltip title="Download PDF">
-                      <img
+                      <NextImage
                         className="editIconClass pointer icon hidden"
                         src={Pdficon}
                         alt=""
@@ -511,7 +511,7 @@ const TeamsList = () => {
 
                   <td style={{ width: "50px" }}>
                     <Tooltip title="Delete Team" color={"red"}>
-                      <img
+                      <NextImage
                         className="editIconClass pointer"
                         src={binIcon}
                         style={{ width: "14px", filter: "invert(1)" }}

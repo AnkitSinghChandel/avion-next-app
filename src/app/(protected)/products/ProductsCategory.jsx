@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import DownArrowOption from "@/src/assets/icons/DownArrowOption.svg";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import NoData from "@/src/components/common/NoData";
@@ -30,23 +31,23 @@ const ProductsCategory = () => {
       <div>
         <div className="relative flex gap-3 text-[16px] font-medium items-baseline">
           <p className="text-(--badge-text) hover:text-[#8d7b68]">Home</p>
-          <img alt="" src={DownArrowOption} width={12} className="icon" />
+          <Image alt="" src={DownArrowOption} width={12} className="icon" />
         </div>
       </div>
 
       <div className="flex gap-3 text-[16px] font-medium items-baseline">
         <p className="text-(--badge-text) hover:text-[#8d7b68]">Categories</p>
-        <img alt="" src={DownArrowOption} width={12} className="icon" />
+        <Image alt="" src={DownArrowOption} width={12} className="icon" />
       </div>
 
       <div className="flex gap-3 text-[16px] font-medium items-baseline">
         <p className="text-(--badge-text) hover:text-[#8d7b68]">Products</p>
-        <img alt="" src={DownArrowOption} width={12} className="icon" />
+        <Image alt="" src={DownArrowOption} width={12} className="icon" />
       </div>
 
       <div className="flex gap-3 text-[16px] font-medium items-baseline">
         <p className="text-(--badge-text) hover:text-[#8d7b68]">Blogs</p>
-        <img alt="" src={DownArrowOption} width={12} className="icon" />
+        <Image alt="" src={DownArrowOption} width={12} className="icon" />
       </div>
     </div>
   );

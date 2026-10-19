@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import NextImage from "next/image";
 import moment from "moment";
 import dayjs from "dayjs";
 import { styles } from "./TeamSinglePDFStyle";
@@ -277,7 +278,7 @@ export const TeamSinglePDFDownload2 = ({ teamListPDFData = [] }) => {
       fileName={`Avion-Team-${teamListPDFData[0]?.firstName}.pdf`}
     >
       {({ loading }) =>
-        loading ? <LoadingOutlined /> : <img src={Pdficon} alt="" />
+        loading ? <LoadingOutlined /> : <NextImage src={Pdficon} alt="" />
       }
     </PDFDownloadLink>
   );
@@ -328,7 +329,11 @@ export const TeamSinglePDFDownload = ({ teamListPDFData = [] }) => {
         cursor: loading ? "progress" : "pointer",
       }}
     >
-      {loading ? <LoadingOutlined /> : <img src={Pdficon} alt="Download PDF" />}
+      {loading ? (
+        <LoadingOutlined />
+      ) : (
+        <NextImage src={Pdficon} alt="Download PDF" />
+      )}
     </button>
   );
 };

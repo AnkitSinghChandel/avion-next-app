@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NextImage from "next/image";
 import { Button, Flex, Modal } from "antd";
 import avion from "../../assets/images/avion.png";
 import "../../styles/WarningPopup.css";
@@ -12,7 +13,7 @@ const WarningPopup = (props) => {
         // title={props.title}
         title={
           <div className="flex gap-3 items-center">
-            <img src={avion} alt="" className="text-start w-10 h-10" />
+            <NextImage src={avion} alt="" className="text-start w-10 h-10" />
             <span>{props.title}</span>
           </div>
         }

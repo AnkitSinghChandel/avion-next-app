@@ -6,6 +6,7 @@ import {
   useParams,
   useSearchParams,
 } from "next/navigation";
+import NextImage from "next/image";
 import "./Profile.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Header from "@/src/layouts/Header";
@@ -394,7 +395,7 @@ END:VCARD`;
               </div>
             ) : (
               <div className="flex gap-3 justify-center pe-">
-                <img
+                <NextImage
                   className="icons mx-"
                   src={btnHover ? addicon : doubleUser}
                   alt=""
@@ -755,7 +756,7 @@ END:VCARD`;
                     }))}
                     optionRender={(option) => (
                       <div className="flex items-center gap-2 p-2">
-                        <img
+                        <NextImage
                           src={option?.data?.avatar}
                           alt=""
                           style={{ width: "26px", height: "26px" }}
