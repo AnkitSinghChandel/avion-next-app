@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Tooltip, Popover, FloatButton } from "antd";
 import stopIcon from "../assets/icons/stop-circle.svg";
-import "../styles/Timer.css";
+import "./Timer.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   DoubleLeftOutlined,

@@ -42,7 +42,7 @@ const ProductsList = () => {
 
   const userid = localStorage.getItem("userid");
   const globalDiscount = localStorage.getItem("globalDiscount");
-  const isAdmin = import.meta.env.VITE_APP_ADMIN === userid;
+  const isAdmin = process.env.NEXT_PUBLIC_ADMIN === userid;
 
   const fetchAllProductsRes = useSelector(
     (state) => state.product.fetchAllProductsRes,
@@ -225,7 +225,7 @@ const ProductsList = () => {
                     <div
                       className="productImage rounded-lg pointer"
                       onClick={() => {
-                        router.push(`/product/${item.productId}`);
+                        router.push(`/products/${item.productId}`);
                       }}
                     >
                       {isLoading && <Skeleton.Image active />}

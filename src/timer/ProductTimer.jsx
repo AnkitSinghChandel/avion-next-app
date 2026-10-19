@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useLocation, useParams } from "react-router";
+import { useRouter, useParams, usePathname } from "next/navigation";
+import NextImage from "next/image";
 import { Tooltip, Popover, FloatButton } from "antd";
-import "../styles/Timer.css";
+import "./Timer.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   DoubleLeftOutlined,
@@ -18,19 +19,19 @@ import {
   timerStop,
   fetchTimerByProductId,
   setTimerRunning_props_Api,
-} from "../redux/actions/productAction";
+} from "@/src/redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "../components/notification/CustomToast";
-import { TIMER_START, TIMER_STOP } from "../redux/constants/productType";
+import toast from "@/src/components/notification/CustomToast";
+import { TIMER_START, TIMER_STOP } from "@/src/redux/constants/productType";
 
 const ProductTimer = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const productID = params.id;
-  const location = useLocation();
+  const pathName = usePathname();
   console.log("param", params.id);
   const [Ankit] = useAutoAnimate();
-  console.log("location", location);
+  console.log("location", pathName);
 
   const userID = localStorage.getItem("userid");
   const timerProductID = localStorage.getItem("timerProductID");
@@ -171,7 +172,7 @@ const ProductTimer = () => {
   }, [timerStopRes]);
 
   useEffect(() => {
-    if (location.pathname.startsWith("/product/") && params.id) {
+    if (pathName.startsWith("/product/") && params.id) {
       dispatch(fetchTimerByProductId(userID, productID));
     }
   }, [timerStartRes, timerStopRes, params.id]);
@@ -191,7 +192,7 @@ const ProductTimer = () => {
       <div className="timerText flex justify-center items-center mt-3">
         <ClockCircleOutlined />
         <p className="min-w-[90px]">{formatTime(totalTime)}</p>
-        <img src={isTimerRunning && "/clock.gif"} width={20} />
+        <NextImage src={isTimerRunning && "/clock.gif"} width={20} />
       </div>
 
       <div className="flex gap-2 justify-between pt-2">

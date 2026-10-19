@@ -1,7 +1,9 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
+import NextImage from "next/image";
+import { useRouter, useParams } from "next/navigation";
 import "../ProductsList.css";
-import Header from "../../layouts/Header";
+import Header from "@/src/layouts/Header";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { Flex, Rate, Skeleton } from "antd";
 import {
@@ -13,22 +15,21 @@ import {
   PlusOutlined,
   MinusOutlined,
 } from "@ant-design/icons";
-import NoData from "../../components/common/NoData";
-import Loader from "../../components/common/Loader";
-import { fetchProductById, addToCart } from "../../redux/actions/productAction";
-import { ADD_TO_CART } from "../../redux/constants/productType";
+import NoData from "@/src/components/common/NoData";
+import Loader from "@/src/components/common/Loader";
+import { fetchProductById, addToCart } from "@/src/redux/actions/productAction";
+import { ADD_TO_CART } from "@/src/redux/constants/productType";
 import { useSelector, useDispatch } from "react-redux";
-import toast from "../../components/notification/CustomToast";
-import ProductTimer from "../../timer/ProductTimer";
+import toast from "@/src/components/notification/CustomToast";
+import ProductTimer from "@/src/timer/ProductTimer";
 import {
   formatCurrency,
   universalFormatCurrency,
-} from "../../utils/formatCurrency";
+} from "@/src/utils/formatCurrency";
 
 const ProductItems = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
   const params = useParams();
   console.log("param", params.id);
   const [Ankit] = useAutoAnimate();
@@ -89,7 +90,7 @@ const ProductItems = () => {
       setShowLoader(false);
 
       toast.success({ description: `${productName} ${addToCartRes.message}` });
-      // navigate("/teams");
+      // router.push("/teams");
 
       dispatch({
         type: ADD_TO_CART,
@@ -146,7 +147,9 @@ const ProductItems = () => {
           style={divWrapperCss}
         >
           <div className="">
-            <img
+            <NextImage
+              width={100}
+              height={100}
               className="rounded-2xl object-cover w-dvw max-h-[360px]"
               src={productImage}
               alt="product image"
@@ -237,8 +240,7 @@ const ProductItems = () => {
             <div
               className="bg-(--card-btn-primary) text-[white] text-[16px] rounded-lg ps-4 w-[150px] max-w-full my-3 p-2 pointer"
               onClick={() => {
-                // history.goBack();
-                navigate(-1);
+                router.back();
               }}
             >
               <span className="ps-1">

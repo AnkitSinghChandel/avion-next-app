@@ -1,8 +1,10 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
-import warningIcon from "../../assets/icons/warning.svg";
-import Footer from "../../layouts/Footer";
-import { fetchAllCartProducts } from "../../redux/actions/productAction";
+import NextImage from "next/image";
+import { useRouter, usePathname, useParams } from "next/navigation";
+import warningIcon from "@/src/assets/icons/warning.svg";
+import Footer from "@/src/layouts/Footer";
+import { fetchAllCartProducts } from "@/src/redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserOutlined,
@@ -13,18 +15,17 @@ import {
   ArrowLeftOutlined,
 } from "@ant-design/icons";
 import { Tooltip, Checkbox, Empty } from "antd";
-import "../../styles/cart.css";
-import "../../styles/asc_Anime.css";
+import "./cart.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   formatCurrency,
   universalFormatCurrency,
-} from "../../utils/formatCurrency";
+} from "@/src/utils/formatCurrency";
 
 const CartProducts = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
+  const path = usePathname();
   const params = useParams();
   console.log("param", params.id);
   const [Ankit] = useAutoAnimate();
@@ -109,7 +110,7 @@ const CartProducts = () => {
           <Tooltip title="Back">
             <ArrowLeftOutlined
               onClick={() => {
-                navigate(-1);
+                router.back();
               }}
               className="bg-(--badge-bg) rounded-[50%] shadow-lg p-2"
               style={{ color: "white", fontSize: "20px" }}
@@ -130,9 +131,11 @@ const CartProducts = () => {
           >
             <Checkbox onChange={onChange}>
               <div className="flex gap-3 items-center ps-3">
-                <img
+                <NextImage
                   src={item?.products?.productImage}
                   alt=""
+                  width={100}
+                  height={60}
                   className="w-[100px] h-[60px] object-cover rounded-lg"
                   loading="lazy"
                   onError={(e) => {

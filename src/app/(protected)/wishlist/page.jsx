@@ -1,11 +1,13 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router";
-import warningIcon from "../../assets/icons/warning.svg";
-import Footer from "../../../layouts/Footer";
+import { useRouter, usePathname, useParams } from "next/navigation";
+import NextImage from "next/image";
+import warningIcon from "@/src/assets/icons/warning.svg";
+import Footer from "@/src/layouts/Footer";
 import {
   fetchAllCartProducts,
   fetchAllWishList,
-} from "../../../redux/actions/productAction";
+} from "@/src/redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 import {
   UserOutlined,
@@ -15,18 +17,17 @@ import {
   SyncOutlined,
 } from "@ant-design/icons";
 import { Tooltip, Popover, FloatButton, Empty } from "antd";
-import "../../styles/cart.css";
-import "../../styles/asc_Anime.css";
+import "../checkout/cart.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import {
   formatCurrency,
   universalFormatCurrency,
-} from "../../../utils/formatCurrency";
+} from "@/src/utils/formatCurrency";
 
 const WishListProducts = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const location = useLocation();
+  const path = usePathname();
   const params = useParams();
   console.log("param", params.id);
   const [Ankit] = useAutoAnimate();
@@ -75,7 +76,7 @@ const WishListProducts = () => {
           <Tooltip title="Back">
             <ArrowLeftOutlined
               onClick={() => {
-                navigate(-1);
+                router.back();
               }}
               className="bg-(--badge-bg) rounded-[50%] shadow-lg p-2"
               style={{ color: "white", fontSize: "20px" }}
@@ -96,9 +97,11 @@ const WishListProducts = () => {
               data-aos-duration="700"
             >
               <div className="bg-[lightgrey] p-1 w-[20-0px] min-h-40 rounded-xl">
-                <img
+                <NextImage
                   src={item?.products?.productImage}
                   alt=""
+                  width={100}
+                  height={100}
                   className="w-full h-full object-cover rounded-xl"
                   loading="lazy"
                   // onLoad={}

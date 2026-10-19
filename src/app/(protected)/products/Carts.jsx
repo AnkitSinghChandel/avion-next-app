@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import {
@@ -15,7 +16,7 @@ import {
   ShoppingOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-import "./cart.css";
+import "../checkout/cart.css";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const Carts = () => {
