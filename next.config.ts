@@ -33,6 +33,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  // remove erros and warn logs from production.
+  compiler: {
+    // removeConsole: true, // remove all logs from production.
+    removeConsole: {
+      exclude: ["error", "warn"], // prod me error, warn show hoga baki nhi.
+    },
+  },
 };
 
 export default nextConfig;
