@@ -53,7 +53,7 @@ const ErrorBoundary = ({ error }: { error: Error }) => {
           >
             {/* <h1>{props.title}</h1> */}
             <p style={{ color: "darkred" }}>
-              {error?.statusText || error?.message || "Unknown error"}
+              {error?.message || "Unknown error"}
             </p>
             <h1>Ooops... Something went wrong!</h1>
             <h1>
