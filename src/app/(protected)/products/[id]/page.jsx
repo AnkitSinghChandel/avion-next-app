@@ -139,8 +139,8 @@ const ProductItems = () => {
         avatar
         active
         loading={loading}
-        paragraph={{ rows: 4 }}
-        className="p-1 md:p-10 pt-10"
+        paragraph={{ rows: 5 }}
+        className="p-1 pt-10"
       >
         <div
           className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-10 pb-4 px-6 2xl:mt-20!"
