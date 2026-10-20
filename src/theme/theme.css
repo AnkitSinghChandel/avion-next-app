@@ -2,7 +2,7 @@
 :root[data-mode="light"] {
   --bg: #fafafa;
   --text: #4b5966;
-  --scrollbar-bg: #cbd5e1;
+  --scrollbar-bg: lightgrey;
 
   /* Sidebar */
   --sidebar-bg: #faf7f5;
