@@ -14,7 +14,8 @@ export const saveToken = async (token) => {
     secure: process.env.NODE_ENV === "prod",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 7,
+    // maxAge: 60 * 60 * 24 * 7, // 7 days
+    maxAge: 60 * 60 * 24, // 1 days
   });
 
   return { success: true };

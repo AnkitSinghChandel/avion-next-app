@@ -18,7 +18,7 @@ export default async function Home() {
   const token = cookieStore.get("token")?.value;
 
   if (token) {
-    redirect("dashboard");
+    redirect("/dashboard");
   }
 
   return (
