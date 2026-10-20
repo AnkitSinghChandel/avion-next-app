@@ -1,17 +1,18 @@
+"use client";
 // npm i html5-qrcode
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
 import { Html5QrcodeScanner, Html5QrcodeSupportedFormats } from "html5-qrcode";
 import { Tooltip } from "antd";
 import { ArrowLeftOutlined, SyncOutlined } from "@ant-design/icons";
 import { Camera, ShieldCheck, ScanLine } from "lucide-react";
 import "./Scanner.css";
-import { fetchAllUsers } from "../../redux/actions/userAction";
+import { fetchAllUsers } from "@/src/redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
-import toast from "../../components/notification/CustomToast";
+import toast from "@/src/components/notification/CustomToast";
 
 const Scanner = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const scannedRef = useRef(false);
 
   // BAR-87bfaec3   -> User Profile
@@ -74,13 +75,13 @@ const Scanner = () => {
 
         if (decodedText.startsWith("BC")) {
           const id = decodedText.slice(2);
-          // navigate(`/profile/${id}`);
-          // navigate(`/profile/${id}?mode=scanner`);
+          // router.push(`/profile/${id}`);
+          // router.push(`/profile/${id}?mode=scanner`);
 
           let matchedUsers = allUserIds?.find((x) => x.startsWith(id));
           if (matchedUsers) {
             await scanner.clear(); // stop camera only when success confirmed
-            navigate(`/profile/${matchedUsers}?mode=scanner`);
+            router.push(`/profile/${matchedUsers}?mode=scanner`);
           } else {
             toast.error({
               key: "invalid-code",
@@ -94,7 +95,7 @@ const Scanner = () => {
 
         if (decodedText.startsWith("QR")) {
           const teamId = decodedText.slice(2);
-          // navigate(`/teams/${teamId}`);
+          // router.push(`/teams/${teamId}`);
           unlockScanner();
           return;
         }
@@ -123,7 +124,7 @@ const Scanner = () => {
         // console.log("Scanner cleanup failed");
       });
     };
-  }, [navigate, allUserIds]);
+  }, [router, allUserIds]);
 
   return (
     <>
@@ -144,7 +145,7 @@ const Scanner = () => {
                 className="bg-(--badge-bg) rounded-[50%] shadow-lg p-2"
                 style={{ color: "white", fontSize: "16px" }}
                 onClick={() => {
-                  navigate(-1);
+                  router.back();
                 }}
               />
             </Tooltip>

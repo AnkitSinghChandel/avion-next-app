@@ -1,7 +1,7 @@
 import SuppliersList from "./SuppliersList";
 
-const mainPage = () => {
+const MainPage = () => {
   return <SuppliersList />;
 };
 
-export default mainPage;
+export default MainPage;

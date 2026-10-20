@@ -248,7 +248,7 @@ const SideBar = () => {
       key: "110",
       icon: <FolderOpenOutlined />,
       label: "ASC-FOLDER",
-      className: "ripple hidde-n!",
+      className: "ripple hidden!",
       onClick: () => router.push("/asc-folder"),
     },
   ];

@@ -1,7 +1,7 @@
 import AddTeam from "../[id]/edit/page";
 
-const CreateTeamPage = () => {
+const MainPage = () => {
   return <AddTeam />;
 };
 
-export default CreateTeamPage;
+export default MainPage;

@@ -1,7 +1,7 @@
 import StockBoard from "./StockBoard";
 
-const stockPage = () => {
+const MainPage = () => {
   return <StockBoard />;
 };
 
-export default stockPage;
+export default MainPage;

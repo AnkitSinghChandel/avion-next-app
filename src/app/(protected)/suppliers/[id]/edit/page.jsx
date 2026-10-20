@@ -1,7 +1,7 @@
 import AddSupplier from "../../AddSupplier";
 
-const mainPage = () => {
+const MainPage = () => {
   return <AddSupplier mode="edit" />;
 };
 
-export default mainPage;
+export default MainPage;

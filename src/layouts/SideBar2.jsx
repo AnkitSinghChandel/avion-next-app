@@ -629,7 +629,7 @@ const SideBar = () => {
 
           {/* ========= ASC-FOLDER option ========= */}
           {isAdmin && (
-            <div>
+            <div className="hidden">
               <Link
                 href="/asc-folder"
                 className={({ isActive }) => {

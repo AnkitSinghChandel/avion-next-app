@@ -1,7 +1,7 @@
 import Settings from "./Settings";
 
-const mainPage = () => {
+const MainPage = () => {
   return <Settings />;
 };
 
-export default mainPage;
+export default MainPage;
