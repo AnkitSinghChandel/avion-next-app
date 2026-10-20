@@ -1,6 +1,7 @@
+"use client";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import toast from "../../components/notification/CustomToast";
+import toast from "@/src/components/notification/CustomToast";
 import axios from "axios";
 
 const SendingMail = () => {

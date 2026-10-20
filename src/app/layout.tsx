@@ -4,6 +4,7 @@ import "./globals.css";
 import "animate.css";
 import StoreProvider from "../redux/store/StoreProvider";
 import "@/src/potectLocalWindow";
+import "@/src/components/watchers/AppWatchers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
