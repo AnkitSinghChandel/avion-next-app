@@ -1,0 +1,279 @@
+.lamp-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #10131c;
+  transition: background 0.5s ease;
+  user-select: none;
+}
+
+/* Light ON hone par background */
+.lamp-wrapper.light-on {
+  background: #3b3935;
+}
+
+/* Ceiling */
+.lamp-wrapper .ceiling {
+  height: 10px;
+  width: 100%;
+  background: #292d38;
+}
+
+/* Hanging wire */
+.lamp-wrapper .wire {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 150px;
+  background: #292929;
+  z-index: 2;
+}
+
+/* Lamp shade */
+.lamp-wrapper .lamp-shade {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 90px;
+  background: linear-gradient(to bottom, #111111, #35312b);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 5px 0 #171717;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Warm light cone */
+.lamp-wrapper.light-on .lamp-shade::after {
+  content: "";
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 330px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 210, 100, 0.42),
+    rgba(255, 190, 70, 0.18),
+    transparent
+  );
+  clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Bulb */
+.lamp-wrapper .lamp-bulb {
+  position: absolute;
+  top: 38px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #444;
+  transition: all 0.4s ease;
+}
+
+/* Bulb ON */
+.lamp-wrapper.light-on .lamp-bulb {
+  background: #fff4b0;
+  box-shadow:
+    0 0 20px #fff1a3,
+    0 0 50px #ffd86b,
+    0 0 100px rgba(255, 190, 70, 0.8);
+}
+
+/* Rope container */
+.lamp-wrapper .pull-rope {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+  z-index: 3;
+  touch-action: none;
+  transition: transform 0.25s ease;
+}
+
+/* Dragging cursor */
+.lamp-wrapper .pull-rope:active {
+  cursor: grabbing;
+}
+
+/* Rope */
+.lamp-wrapper .lamp-rope {
+  width: 4px;
+  height: 100px;
+  background: linear-gradient(to right, #8b5e28, #d1a45e, #8b5e28);
+  border-radius: 4px;
+  transition: height 0.05s linear;
+}
+
+/* Wooden rope handle */
+.lamp-wrapper .lamp-handle {
+  width: 18px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #8b5e28, #d1a45e, #8b5e28);
+  border: 2px solid #76501f;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Instruction text */
+.lamp-wrapper::after {
+  content: "Pull the rope 💡";
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .lamp-wrapper .lamp-shade {
+    width: 140px;
+    height: 70px;
+  }
+
+  .lamp-wrapper .lamp-bulb {
+    width: 40px;
+    height: 40px;
+    top: 30px;
+  }
+
+  .lamp-wrapper .pull-rope {
+    top: 220px;
+  }
+}
+
+/* sidebar */
+/* Small lamp for profile/sidebar popup */
+.sidebar-lamp .lamp-wrapper {
+  width: 100px;
+  height: 145px;
+  background: transparent;
+  overflow: visible;
+}
+
+.sidebar-lamp .lamp-wrapper .ceiling {
+  height: 3px;
+  width: 100%;
+  background: #292d38;
+}
+
+/* Small hanging wire */
+.sidebar-lamp .wire {
+  height: 25px;
+  width: 4px;
+}
+
+/* Small black shade */
+.sidebar-lamp .lamp-shade {
+  top: 25px;
+  width: 70px;
+  height: 38px;
+  background: linear-gradient(#111, #35312b);
+  box-shadow: 0 3px 0 #171717;
+}
+
+/* Small warm bulb */
+.sidebar-lamp .lamp-bulb {
+  top: 15px;
+  width: 22px;
+  height: 22px;
+}
+
+/* Small glow */
+.sidebar-lamp .lamp-wrapper.light-on .lamp-bulb {
+  background: #fff4b0;
+  box-shadow:
+    0 0 8px #fff1a3,
+    0 0 20px #ffd86b,
+    0 0 35px rgba(255, 190, 70, 0.6);
+}
+
+/* Rope */
+.sidebar-lamp .pull-rope {
+  top: 63px;
+  pointer-events: auto;
+}
+
+.sidebar-lamp .lamp-rope {
+  width: 3px;
+  height: 50px !important;
+}
+
+/* Small wooden handle */
+.sidebar-lamp .lamp-handle {
+  width: 11px;
+  height: 20px;
+  background: linear-gradient(to right, #8b5e28, #d1a45e, #8b5e28);
+  border: 1px solid #76501f;
+}
+
+/* Text hide */
+.sidebar-lamp .lamp-wrapper::after {
+  display: none;
+}
+
+/* Light cone hide in small view */
+.sidebar-lamp .lamp-shade::after {
+  display: none;
+}
+
+/* Only sidebar lamp ka warm light cone */
+.sidebar-lamp .lamp-wrapper.light-on::before {
+  content: "";
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 180px;
+  height: 170px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 210, 100, 0.35),
+    rgba(255, 190, 70, 0.15),
+    transparent
+  );
+
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Shade cone ke upar rahe */
+.sidebar-lamp .lamp-shade {
+  z-index: 2;
+}
+
+.sidebar-lamp .lamp-wrapper .lamp-shade {
+  box-shadow: unset;
+}
+
+/* Bulb glow */
+.sidebar-lamp .lamp-wrapper.light-on .lamp-bulb {
+  background: #fff3ad;
+  box-shadow:
+    0 0 8px rgba(255, 220, 120, 0.8),
+    0 0 22px rgba(255, 190, 70, 0.5);
+}

@@ -1,0 +1,15 @@
+.boardDivCss {
+  background: var(--card-bg);
+  padding: 25px 15px;
+  border-radius: 16px;
+  box-shadow: var(--my-shadow);
+  transition: all 0.3s;
+}
+
+.boardDivCss:hover {
+  /* background: #f3f4f6; */
+  transition: all 0.3s;
+  transform: scale(1.03);
+  /* transform: translateY(-5px); */
+  /* transform: translateX(-10px); */
+}

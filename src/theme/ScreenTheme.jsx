@@ -1,13 +1,14 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router";
+import { useRouter, usePathname } from "next/navigation";
 import { Button, Flex, Modal, ColorPicker } from "antd";
 import { BgColorsOutlined } from "@ant-design/icons";
 import { Palette } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const ScreenTheme = (props) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const path = usePathname();
 
   const { t, i18n } = useTranslation();
 
