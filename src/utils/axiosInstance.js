@@ -1,7 +1,6 @@
 import axios from "axios";
 import toast from "../components/notification/CustomToast";
 import { clearToken } from "@/src/app/actions/auth";
-import { redirect } from "next/navigation";
 
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -69,11 +68,17 @@ axiosInstance.interceptors.response.use(
       localStorage.removeItem("token");
       sessionStorage.clear();
       localStorage.clear();
-      clearToken();
+      // clearToken();
 
-      setTimeout(() => {
-        redirect("/");
-      }, 3000);
+      // setTimeout(() => {
+      //   window.location.href = "/";
+      // }, 3000);
+
+      clearToken().finally(() => {
+        setTimeout(() => {
+          window.location.replace("/");
+        }, 3000);
+      });
     }
 
     return Promise.reject(error);

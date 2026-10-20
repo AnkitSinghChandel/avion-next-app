@@ -14,12 +14,12 @@ import { redirect } from "next/navigation";
 import FirstHome from "@/src/app/home/FirstHome";
 
 export default async function Home() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
+  // const cookieStore = await cookies();
+  // const token = cookieStore.get("token")?.value;
 
-  if (token) {
-    redirect("/dashboard");
-  }
+  // if (token) {
+  //   redirect("/dashboard");
+  // }
 
   return (
     <div className="">
