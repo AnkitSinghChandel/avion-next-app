@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router";
+import NextImage from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import dayjs from "dayjs";
@@ -14,9 +14,9 @@ import {
   PDFViewer,
   PDFDownloadLink,
 } from "@react-pdf/renderer";
-import Pdficon from "../../../assets/icons/pdf-icon.svg";
+import Pdficon from "@/src/assets/icons/pdf-icon.svg";
 import { LoadingOutlined } from "@ant-design/icons";
-import { universalFormatCurrency } from "../../../utils/formatCurrency";
+import { universalFormatCurrency } from "@/src/utils/formatCurrency";
 
 // PDF Document Component
 const SupplierPDF = ({ supplierPDFData = [] }) => {
@@ -364,7 +364,7 @@ export const SupplierPDFDownload2 = ({ supplierPDFData = [] }) => {
       fileName={`Avion-Supplier-${supplierPDFData[0]?.name}.pdf`}
     >
       {({ loading }) =>
-        loading ? <LoadingOutlined /> : <img src={Pdficon} alt="" />
+        loading ? <LoadingOutlined /> : <NextImage src={Pdficon} alt="" />
       }
     </PDFDownloadLink>
   );
@@ -415,7 +415,11 @@ export const SupplierPDFDownload = ({ supplierPDFData = [] }) => {
         cursor: loading ? "progress" : "pointer",
       }}
     >
-      {loading ? <LoadingOutlined /> : <img src={Pdficon} alt="Download PDF" />}
+      {loading ? (
+        <LoadingOutlined />
+      ) : (
+        <NextImage src={Pdficon} alt="Download PDF" />
+      )}
     </button>
   );
 };

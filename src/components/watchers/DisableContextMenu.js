@@ -7,7 +7,7 @@ const DisableContextMenu = () => {
 
   // disable onContextMenu in whole app
   useEffect(() => {
-    // if (import.meta.env.PROD) return;
+    // if (process.env.PROD) return;
     if (hostname === "localhost" || isAdmin) return;
 
     const disableRightClick = (e) => {

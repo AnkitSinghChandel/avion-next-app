@@ -1,7 +1,7 @@
 export const ROLES = {
-  ADMIN: import.meta.env.VITE_APP_ROLE_ADMIN,
-  OWNER: import.meta.env.VITE_APP_ROLE_OWNER,
-  MANAGER: import.meta.env.VITE_APP_ROLE_MANAGER,
-  VIEWER: import.meta.env.VITE_APP_ROLE_VIEWER,
-  USER: import.meta.env.VITE_APP_ROLE_USER,
+  ADMIN: process.env.NEXT_PUBLIC_ADMIN,
+  OWNER: process.env.NEXT_PUBLIC_ROLE_OWNER,
+  MANAGER: process.env.NEXT_PUBLIC_ROLE_MANAGER,
+  VIEWER: process.env.NEXT_PUBLIC_ROLE_VIEWER,
+  USER: process.env.NEXT_PUBLIC_ROLE_USER,
 };

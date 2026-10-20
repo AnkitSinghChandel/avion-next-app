@@ -412,7 +412,7 @@ END:VCARD`;
         active
         loading={loading}
         paragraph={{ rows: 4 }}
-        className="p-1 md:p-10"
+        className="p-1 md:pt-10"
       >
         <BorderBeam count={2} duration={6} size={150}>
           <div
