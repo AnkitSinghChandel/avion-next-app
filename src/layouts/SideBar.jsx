@@ -68,7 +68,7 @@ const SideBar = () => {
     if (path === "/users") return "3-2";
 
     if (path === "/products" || path.startsWith("/product/")) return "4-1";
-    if (path === "/stock-levels") return "4-2";
+    if (path === "/stocks") return "4-2";
 
     if (path.startsWith("/suppliers")) return "5-1";
 
@@ -179,7 +179,7 @@ const SideBar = () => {
           // icon: <UsergroupAddOutlined />,
           label: "Stock Levels",
           className: "ripple",
-          onClick: () => router.push("/stock-levels"),
+          onClick: () => router.push("/stocks"),
         },
       ],
     },

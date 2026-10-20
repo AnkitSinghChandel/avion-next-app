@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "animate.css";
 import StoreProvider from "../redux/store/StoreProvider";
+import "@/src/potectLocalWindow";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

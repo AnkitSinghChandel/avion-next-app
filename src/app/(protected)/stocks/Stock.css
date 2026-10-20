@@ -1,0 +1,23 @@
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-value {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 500;
+}
