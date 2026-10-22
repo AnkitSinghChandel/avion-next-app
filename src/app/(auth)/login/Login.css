@@ -37,7 +37,7 @@
 .inputBorder {
   background: var(--bg);
   color: var(--text);
-  border: 1px solid #d8cdc2;
+  border: 1px solid #cbd8e8;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;
@@ -50,12 +50,12 @@
 }
 
 .inputBorder:focus {
-  border: 1px solid #b89b7a;
+  border: 1px solid #4096ff;
 }
 
 .eyeIcon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   right: 10px;
   top: 20px;
@@ -80,11 +80,11 @@
 }
 
 .createAccount {
-  border: 1px solid #646cff;
+  border: 1px solid #005fd5;
   padding: 10px;
   border-radius: 12px;
   text-align: center;
-  color: #646cff;
+  color: #005fd5;
   font-size: 14px;
   cursor: pointer;
   font-weight: 400;

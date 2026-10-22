@@ -174,7 +174,7 @@ html[data-theme="theme-gold"][data-mode="dark"] {
   --popup-text: #1f4d63;
 
   /* Placeholder */
-  --placeholder-color: #8e8e93;
+  --placeholder-color: #94a3b8;
 }
 html[data-theme="theme-ocean"][data-mode="dark"] {
   --sidebar-bg: #112b35;
@@ -227,7 +227,7 @@ html[data-theme="theme-ocean"][data-mode="dark"] {
   --popup-highlight: #f0f6ff;
 
   /* Placeholder */
-  --placeholder-color: #8e8e93;
+  --placeholder-color: #94a3b8;
 }
 html[data-theme="theme-blue"][data-mode="dark"] {
   --text: #9ca3af;
