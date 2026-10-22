@@ -469,7 +469,7 @@ const AddProduct = () => {
                 placeholder="Product Code (SKU)"
                 className="mt-2 text-center!"
                 classNames={{
-                  root: "text-center! bg-(--bg)! border-[1.5px]! border-[#d8cdc2]! shadow-none!",
+                  root: "text-center! bg-(--bg)! border! border-[#cbd8e8]! shadow-none!",
                   input: "text-cente-r!",
                 }}
               />

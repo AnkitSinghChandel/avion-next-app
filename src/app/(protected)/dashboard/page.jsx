@@ -250,7 +250,7 @@ function SalesChart() {
       </div>
 
       {/* Summary */}
-      <div className="grid grid-cols-2 gap-4 mt-6 pt-4 px-5 border-t">
+      <div className="grid grid-cols-2 gap-4 mt-6 pt-4 px-5 border-t border-gray-200">
         <div>
           <p className="text-xs text-gray-500">Total Sales</p>
 

@@ -166,7 +166,7 @@ const Scanner = () => {
 
           <div className="grid lg:grid-cols-2 gap-8 my-8 2xl:my-25 bg-white rounded-3xl shadow-(--google-shadow) p-8">
             {/* Left Side */}
-            <div className="lg:border-r lg:pr-8 order-2 lg:order-1">
+            <div className="lg:border-r lg:border-[#cbd8e8] lg:pr-8 order-2 lg:order-1">
               <div className="flex justify-center">
                 <div className="w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center">
                   <ScanLine size={40} className="text-slate-700" />
@@ -219,7 +219,7 @@ const Scanner = () => {
 
             {/* Right Side */}
             <div className="flex flex-col order-1 lg:order-2">
-              <div className="bg-slate-50 border rounded-2xl p-4">
+              <div className="bg-slate-50 border border-[#cbd8e8] rounded-2xl p-4">
                 {loading && (
                   <p className="text-center">
                     Please wait ... &nbsp; <SyncOutlined spin />

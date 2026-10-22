@@ -349,15 +349,15 @@ const Stock = () => {
               {/* {selectedProduct.product} */}
             </p>
 
-            <div className="mt-2 p-3 border-2 border-gray-200 rounded-xl">
+            <div className="mt-2 p-3 border border-[#cbd8e8] rounded-xl">
               <div className="flex gap-5 items-center">
-                <div className="bg-gray-200 rounded-xl w-15 h-15 flex justify-center">
+                <div className="bg-gray-100 rounded-lg w-15 h-15 flex justify-center">
                   <NextImage
                     src={selectedProduct.image}
                     alt=""
                     width={100}
                     height={100}
-                    className="p-2"
+                    className="p-1 rounded-lg"
                   />
                 </div>
 
@@ -405,7 +405,7 @@ const Stock = () => {
             </div>
 
             {/* stock information */}
-            <div className="mt-2 p-3 border-2 border-gray-200 rounded-xl">
+            <div className="mt-2 p-3 border border-[#cbd8e8] rounded-xl">
               <p className="text-black/70 font-bold">Stock Information</p>
               <div className="product-details pt-3">
                 <div className="detail-row">
@@ -451,7 +451,7 @@ const Stock = () => {
             </div>
 
             {/* recent activity */}
-            <div className="mt-2 p-3 border-2 border-gray-200 rounded-xl">
+            <div className="mt-2 p-3 border border-[#cbd8e8] rounded-xl">
               <p className="text-black/70 font-bold">Recent Activity</p>
               <div className="product-details pt-3">
                 {selectedProduct.activities.map((item, index) => (
