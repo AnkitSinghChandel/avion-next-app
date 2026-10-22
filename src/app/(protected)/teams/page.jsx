@@ -359,7 +359,7 @@ const TeamsList = () => {
             </div>
 
             <div
-              className="border border-gray-300 rounded-lg flex justify-center items-center px-3 h-10 bg-(--btn-primary-bg) hover:bg-(--btn-primary-bg-hover) text-white pointer ascButton w-40! shadow-(--my-shadow) ripple flex-grow"
+              className="rounded-lg flex justify-center items-center px-3 h-10 bg-(--btn-primary-bg) hover:bg-(--btn-primary-bg-hover) text-white pointer ascButton w-40! shadow-(--my-shadow) ripple flex-grow"
               onClick={() => {
                 router.push("/teams/create");
               }}
