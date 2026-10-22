@@ -136,7 +136,7 @@ const Login = () => {
           <div className="login-left-box p-">
             {/* <img src={ASC33} alt="" className="login-left-img" /> */}
             <Image
-              src="/one5.png"
+              src="/avion5.png"
               alt=""
               priority
               fill
@@ -327,7 +327,7 @@ const Login = () => {
 
             <div className="pt-5">
               <Image
-                src="/one6.png"
+                src="/avion4.png"
                 alt=""
                 width={530}
                 height={1}
