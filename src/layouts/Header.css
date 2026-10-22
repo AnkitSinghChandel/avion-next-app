@@ -71,7 +71,8 @@
 
 .userHeaderInfo {
   text-decoration: none;
-  color: gray;
+  /* color: gray; */
+  color: #718096;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;

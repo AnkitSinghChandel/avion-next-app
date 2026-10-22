@@ -156,10 +156,10 @@ const Login = () => {
         </BorderBeam>
 
         <div className="login-right-box pt-5">
-          <p className="ps-4 welcomeTxt">Welcome !</p>
+          <p className="ps-4 welcomeTxt">Welcome to Avion !</p>
 
-          <p className="ps-4 pt-2 text-[#a37a32] text-[16px]">
-            Please login to continue to Avion platform
+          <p className="ps-4 pt-2 text-[#718096] text-[16px]">
+            Sign in to continue to your Avion workspace.
           </p>
 
           <div className="p-3">
@@ -252,7 +252,7 @@ const Login = () => {
               <input
                 type="checkbox"
                 id="agree"
-                style={{ accentColor: "#8d7b68" }}
+                style={{ accentColor: "#718096" }}
                 className="TermsCon pointer"
                 value=""
                 onChange={() => {
@@ -295,7 +295,7 @@ const Login = () => {
 
             <Button
               type="primary"
-              className="addButton ascButton border-[#8d7b68]! bg-[#8d7b68]!"
+              className="addButton ascButton border-[#4096FF]! bg-[#4096FF]!"
               style={{ width: "100%", maxWidth: "100%", fontSize: "18px" }}
               disabled={termCondition !== true}
               icon={<PoweroffOutlined />}
@@ -309,12 +309,12 @@ const Login = () => {
               <span> OR </span>
             </div> */}
 
-            <p className="text-center pt-4 text-[14px] text-[#8d7b68] font-semibold">
+            <p className="text-center pt-4 text-[14px] text-[#718096] font-semibold">
               New to Avion platform ?
             </p>
 
             <div
-              className="mt-3 createAccount w-full md:w-[35%] m-auto flex hover:scale-105"
+              className="mt-3 createAccount w-full md:w-[40%] m-auto flex hover:scale-105"
               onClick={() => {
                 router.push("/signup");
               }}

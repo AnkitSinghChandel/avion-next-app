@@ -1,12 +1,12 @@
 .loginBg {
-  background: linear-gradient(135deg, #f5f1ec, #eee7df);
+  background: #fafafa;
 }
 
 .login-left-box {
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.45);
+  background: white;
   backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--my-shadow);
 }
 
 .login-left-img {
@@ -17,20 +17,19 @@
 
 .login-right-box {
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.45);
+  background: white;
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(141, 123, 104, 0.25);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--my-shadow);
 }
 
 .welcomeTxt {
-  color: #8d7b68;
+  color: #718096;
   font-size: 18px;
   font-weight: 600;
 }
 
 .login-label {
-  color: #8d7b68;
+  color: #718096;
   font-size: 16px;
   font-weight: 600;
 }
@@ -63,7 +62,7 @@
 }
 
 .keep-labels {
-  color: #8d7b68;
+  color: #718096;
   font-size: 16px;
   font-weight: 600;
 }
