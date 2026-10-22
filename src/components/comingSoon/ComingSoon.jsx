@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { WechatWorkOutlined, CloseOutlined } from "@ant-design/icons";
+import { Palette } from "lucide-react";
 
 const ComingSoon = () => {
   const router = useRouter();
@@ -26,30 +27,27 @@ const ComingSoon = () => {
 
   useEffect(() => {
     if (isLoggedIn && redrectValue) {
-      const showTimer = setTimeout(() => {
-        setShowPopup(true);
-      }, 5000);
+      setShowPopup(true);
 
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         // window.open(
         //   "https://accounts.intuit.com/app/sign-in?app_group=QBO&asset_alias=Intuit.accounting.core.qbowebapp&app_environment=prod",
         // );
         // window.open("/chat", "_blank");
         setShowPopup(false);
         localStorage.removeItem("redrectValue");
-      }, 15000);
-      return () => {
-        clearTimeout(showTimer);
-        clearTimeout(timer);
-      };
+      }, 7000);
     }
-  }, []);
+  }, [isLoggedIn, redrectValue]);
 
   return (
     <div>
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="bg-(--card-bg) p-4 rounded-lg shadow-lg text-center max-w-sm animate__animated animate__fadeIn m-5">
+          <div
+            className="bg-(--card-bg) p-4 rounded-lg shadow-lg text-center animate__animated animate__fadeIn m-5"
+            style={{ width: "500px", maxWidth: "100%" }}
+          >
             <h2 className="flex">
               <CloseOutlined
                 className="ms-auto pointer"
@@ -60,26 +58,34 @@ const ComingSoon = () => {
             </h2>
 
             <div className="py-2">
-              <h2 className="text-[#6D5DFB] text-[16px] font-bold tracking-wide mb-2">
-                🚀 New Feature Available
-              </h2>
+              <div className="flex gap-3 items-center">
+                <div className="bg-[#f1ece8] rounded-lg p-2 px-3 w-fit">
+                  <Palette
+                    className="text-xl group-hover:text-amber-500! icon"
+                    size={18}
+                  />
+                </div>
+                <h2 className="text-[#2563eb] text-[16px] font-semibold tracking-wide">
+                  New Feature Available
+                </h2>
+              </div>
 
-              <div className="text-[#5B6475] text-[16px] leading-7 font-medium max-w-md mx-auto pt-2">
+              <div className="text-[#718096] text-[14px] leading-7 font-medium mx-auto pt-2">
                 You can now customize your system theme from the{" "}
-                <span className="text-[#6D5DFB] font-bold">Settings</span> to
-                match your style.
-                <br />
-                <p
-                  className="mt-5 py-1.75 m-auto border rounded-2xl text-center w-25 text-sm text-white bg-[#6D5DFB] pointer shadow-lg"
-                  onClick={() => {
-                    router.push("/settings");
-                    setTimeout(() => {
-                      setShowPopup(false);
-                    }, 500);
-                  }}
-                >
-                  Try it now
-                </p>
+                <span className="text-[#2563eb] font-semibold">Settings</span>{" "}
+                to match your style.
+              </div>
+
+              <div
+                className="mt-5 py-2.5 m-auto rounded-2xl text-center text-sm text-white bg-[#2563eb] pointer shadow-lg"
+                onClick={() => {
+                  navigate("/settings");
+                  setTimeout(() => {
+                    setShowPopup(false);
+                  }, 500);
+                }}
+              >
+                Try it now
               </div>
             </div>
           </div>
