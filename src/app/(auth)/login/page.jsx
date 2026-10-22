@@ -132,11 +132,11 @@ const Login = () => {
       />
 
       <div className="loginBg grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 p-4 h-screen">
-        <BorderBeam count={2} color={"#8D7B68"}>
+        <BorderBeam count={2} color={""}>
           <div className="login-left-box p-">
             {/* <img src={ASC33} alt="" className="login-left-img" /> */}
             <Image
-              src="/avion5.png"
+              src="/avion3.png"
               alt=""
               priority
               fill
@@ -157,10 +157,6 @@ const Login = () => {
 
         <div className="login-right-box pt-5">
           <p className="ps-4 welcomeTxt">Welcome to Avion !</p>
-
-          <p className="ps-4 pt-2 text-[#718096] text-[16px]">
-            Sign in to continue to your Avion workspace.
-          </p>
 
           <div className="p-3">
             <label htmlFor="ASCemail" className="login-label ps-2">
@@ -327,7 +323,7 @@ const Login = () => {
 
             <div className="pt-5">
               <Image
-                src="/avion4.png"
+                src="/secure.png"
                 alt=""
                 width={530}
                 height={1}
