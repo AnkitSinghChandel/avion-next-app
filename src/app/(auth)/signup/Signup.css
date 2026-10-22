@@ -34,7 +34,7 @@
   /* background: transparent; */
   background: var(--bg);
   color: var(--text);
-  border: 1px solid #d8cdc2;
+  border: 1.5px solid #d8cdc2;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 500;

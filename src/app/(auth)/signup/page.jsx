@@ -645,11 +645,11 @@ const Signup = () => {
           />
           <NextImage
             className="eyeIcon pointer absolute"
-            style={{ top: "48px", right: "15px" }}
+            style={{ top: "48px", right: "20px" }}
             src={showPassword ? eye : eyeClose}
             alt=""
-            width={20}
-            height={20}
+            width={16}
+            height={16}
             onClick={() => setShowPassword(!showPassword)}
           />
           <br />
