@@ -65,7 +65,6 @@ const ForgotPassword = (props) => {
   return (
     <div id="">
       <Modal
-        {...props}
         // title={props.title}
         title={
           <div className="flex gap-3 items-center">
@@ -76,7 +75,7 @@ const ForgotPassword = (props) => {
               height={40}
               className="text-start shadow-(--my-shadow) rounded-full logo-up-down"
             />
-            <span className="text-[#6a5a50]">
+            <span className="text-[#718096]">
               {props.title || "Forgot Password"}
             </span>
           </div>
@@ -108,7 +107,7 @@ const ForgotPassword = (props) => {
               // loading={props.loading}
               loading={loading}
               disabled={!email.trim()}
-              className="addButton ascButton w-full! sm:w-45!"
+              className="addButton ascButton border-[#4096FF]! bg-[#4096FF]! w-full! sm:w-45!"
               onClick={() => {
                 // props.onOk();
                 handleSubmit();
