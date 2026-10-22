@@ -113,23 +113,20 @@ const SideBar = () => {
       // icon: <ContactsOutlined />,
       // icon: <img src={userImage} width={25} className="rounded-full" />,
       icon: userImage ? (
-        <img
-          src={userImage}
-          className="w-6.25 h-6.25 rounded-full object-cover"
-        />
+        <img src={userImage} className="w-8 h-8 rounded-full object-cover" />
       ) : (
         <ContactsOutlined />
       ),
       // label: "Profile",
       label: (
-        <div className="flex flex-col leading-[18px]">
+        <div className="flex flex-col leading-[25px]">
           <span>Profile</span>
           <span className="text-xs" title={userLoginData?.email}>
             {userLoginData?.email}
           </span>
         </div>
       ),
-      className: "ripple absolute! bottom-3 ps-3.25!",
+      className: "ripple absolute! bottom-3 ps-3.25! py-7!",
       onClick: () => router.push(`/profile/${userid}`),
     },
 
@@ -240,7 +237,7 @@ const SideBar = () => {
       key: "100",
       icon: <SettingOutlined spin style={{ animationDuration: "3s" }} />,
       label: "Settings",
-      className: "ripple absolute! bottom-15!",
+      className: "ripple absolute! bottom-20!",
       onClick: () => router.push("/settings"),
     },
 
@@ -257,7 +254,7 @@ const SideBar = () => {
     return null;
   }
 
-  let sideBarHeight = sideBarOpen ? 190 : 230;
+  let sideBarHeight = sideBarOpen ? 215 : 215;
 
   return (
     <>

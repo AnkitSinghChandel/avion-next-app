@@ -354,7 +354,7 @@ const Signup = () => {
         />
         <CancelButton
           label={"Cancel"}
-          className="w-full! sm:w-45!"
+          className="w-full! sm:w-45! border-[#4096FF]!"
           onClick={() => {
             if (typeInScreen !== "") {
               setCancelPopupShow(true);
@@ -380,7 +380,7 @@ const Signup = () => {
             validemail || showLoader
           }
           label={""}
-          className="w-full! sm:w-45!"
+          className="w-full! sm:w-45!  border-[#4096FF]! bg-[#4096FF]! hover:bg-[#1677ff]!"
           onMouseEnter={() => setBtnHover(true)}
           onMouseLeave={() => setBtnHover(false)}
           onClick={handleSignup}

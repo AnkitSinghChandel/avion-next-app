@@ -27,26 +27,25 @@ const ProductsCategory = () => {
   ];
 
   return (
-    <div className="hidden md:flex flex-wrap gap-9 pointer">
+    <div className="hidden md:flex flex-wrap gap-4 pointer">
       <div>
         <div className="relative flex gap-3 text-[16px] font-medium items-baseline">
-          <p className="text-(--badge-text) hover:text-[#8d7b68]">Home</p>
+          <p className="text-(--badge-text) hover:text-(--badge-bg)">
+            Announcements
+          </p>
           <Image alt="" src={DownArrowOption} width={12} className="icon" />
         </div>
       </div>
 
       <div className="flex gap-3 text-[16px] font-medium items-baseline">
-        <p className="text-(--badge-text) hover:text-[#8d7b68]">Categories</p>
+        <p className="text-(--badge-text) hover:text-(--badge-bg)">
+          Categories
+        </p>
         <Image alt="" src={DownArrowOption} width={12} className="icon" />
       </div>
 
       <div className="flex gap-3 text-[16px] font-medium items-baseline">
-        <p className="text-(--badge-text) hover:text-[#8d7b68]">Products</p>
-        <Image alt="" src={DownArrowOption} width={12} className="icon" />
-      </div>
-
-      <div className="flex gap-3 text-[16px] font-medium items-baseline">
-        <p className="text-(--badge-text) hover:text-[#8d7b68]">Blogs</p>
+        <p className="text-(--badge-text) hover:text-(--badge-bg)">Blogs</p>
         <Image alt="" src={DownArrowOption} width={12} className="icon" />
       </div>
     </div>

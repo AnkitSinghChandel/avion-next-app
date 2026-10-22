@@ -476,7 +476,7 @@ const Header = (props) => {
 
           {showProductsCategory && (
             <div className="flex flex-wrap-reverse justify-center sm:justify-between pt-5 px-3 sm:px-2">
-              <div className="pt-6 lg:pt-1">
+              <div className="pt-1">
                 <ProductsCategory />
               </div>
               <div className="sm:ms-auto">

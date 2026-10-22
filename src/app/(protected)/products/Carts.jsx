@@ -80,18 +80,16 @@ const Carts = () => {
         className="flex items-center gap-2 pointer carts relative"
         onClick={() => setIsOpenAccBox(!isOpenAccBox)}
       >
-        {/* <img alt="" src="" /> */}
-        <UserOutlined
-          className="carts-icons"
-          // style={{ fontSize: "25px" }}
-        />
+        <UserOutlined className="carts-icons" size={20} />
         <div
           onClick={() => {
-            router.push(`/profile/${userID}`);
+            // router.push(`/profile/${userID}`);
           }}
         >
-          <p className="carts-main-label">Account</p>
-          <p className="carts-label">LOGIN</p>
+          <p className="carts-main-label">Notifications</p>
+          <div className="carts-label">
+            <p className="totalWish">{`${0}`}</p>&nbsp;unread
+          </div>
         </div>
       </div>
 
@@ -101,7 +99,6 @@ const Carts = () => {
           router.push("/wishlist");
         }}
       >
-        {/* <img alt="" src="" /> */}
         <HeartOutlined className="carts-icons" />
         <div>
           <p className="carts-main-label">Wishlist</p>
@@ -117,7 +114,6 @@ const Carts = () => {
           router.push("/checkout");
         }}
       >
-        {/* <img alt="" src="" /> */}
         <ShoppingCartOutlined className="carts-icons" />
         <div>
           <p className="carts-main-label">Cart</p>

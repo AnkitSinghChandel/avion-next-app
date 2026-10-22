@@ -190,8 +190,8 @@ html[data-theme="theme-ocean"][data-mode="dark"] {
   --popup-highlight: #171e2e;
 }
 
-/* === Blue Theme === */
-:root[data-theme="theme-blue"] {
+/* === Azure Blue Theme === */
+:root[data-theme="theme-Azure-blue"] {
   /* Sidebar */
   --sidebar-bg: #f0f7ff;
   --sidebar-text: #1f3b5b;
@@ -229,7 +229,7 @@ html[data-theme="theme-ocean"][data-mode="dark"] {
   /* Placeholder */
   --placeholder-color: #8e8e93;
 }
-html[data-theme="theme-blue"][data-mode="dark"] {
+html[data-theme="theme-Azure-blue"][data-mode="dark"] {
   --text: #9ca3af;
 
   --sidebar-bg: #152235;
@@ -245,4 +245,84 @@ html[data-theme="theme-blue"][data-mode="dark"] {
   --popup-bg: #171e2e;
   --popup-text: #9ca3af;
   --popup-highlight: #171e2e;
+}
+
+/* === Royal Blue Theme === */
+:root[data-theme="theme-Royal-blue"] {
+  /* Sidebar */
+  --sidebar-bg: #f0f7ff;
+  --sidebar-text: #1f3b5b;
+  --selected-sidebar-bg: #2563eb;
+
+  /* Primary Button */
+  --btn-primary-bg: #2563eb;
+  --btn-primary-border: #2563eb;
+  --btn-primary-bg-hover: #1677ff;
+  --btn-primary-text: #ffffff;
+
+  /* Secondary Button */
+  --btn-secondary-border: #2563eb;
+
+  /* Table */
+  --table-header-bg: #f5f9ff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #fafcff;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #ffffff;
+  --card-text: #1f3b5b;
+  --card-btn-primary: #2563eb;
+
+  /* Badge */
+  --badge-bg: #2563eb;
+  --badge-text: #1f4d63;
+
+  /* Popup */
+  --popup-bg: #ffffff;
+  --popup-text: #1f3b5b;
+  --popup-highlight: #f0f6ff;
+
+  /* Placeholder */
+  --placeholder-color: #8e8e93;
+}
+
+/* === Deep Blue Theme === */
+:root[data-theme="theme-deep-blue"] {
+  /* Sidebar */
+  --sidebar-bg: #f0f7ff;
+  --sidebar-text: #1f3b5b;
+  --selected-sidebar-bg: #176bc3;
+
+  /* Primary Button */
+  --btn-primary-bg: #176bc3;
+  --btn-primary-border: #176bc3;
+  --btn-primary-bg-hover: #12569c;
+  --btn-primary-text: #ffffff;
+
+  /* Secondary Button */
+  --btn-secondary-border: #176bc3;
+
+  /* Table */
+  --table-header-bg: #f5f9ff;
+  --table-row-bg: #ffffff;
+  --table-row-even-bg: #fafcff;
+  --table-row-hover-bg: #ffffff;
+
+  /* Card */
+  --card-bg: #ffffff;
+  --card-text: #1f3b5b;
+  --card-btn-primary: #176bc3;
+
+  /* Badge */
+  --badge-bg: #176bc3;
+  --badge-text: #1f4d63;
+
+  /* Popup */
+  --popup-bg: #ffffff;
+  --popup-text: #1f3b5b;
+  --popup-highlight: #f0f6ff;
+
+  /* Placeholder */
+  --placeholder-color: #8e8e93;
 }

@@ -1,8 +1,8 @@
 .carts:hover .carts-main-label,
 .carts:hover .carts-label,
 .carts:hover .carts-icons {
-  color: #8d7b68;
-  transition: all 0.5s ease-in-out;
+  color: #718096;
+  transition: all 0.3s ease-in-out;
 }
 
 .carts-main-label {
@@ -19,7 +19,7 @@
 
 .carts-icons {
   color: var(--badge-text);
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .totalWish {

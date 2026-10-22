@@ -88,12 +88,36 @@ const ScreenTheme = (props) => {
           <input
             type="radio"
             name="theme"
-            value="theme-blue"
+            value="theme-Azure-blue"
             className="w-4 h-4 accent-[#8D7B68]"
-            checked={screenTheme === "theme-blue"}
+            checked={screenTheme === "theme-Azure-blue"}
             onChange={(e) => changeTheme(e.target.value)}
           />
-          Blue
+          Azure Blue
+        </label>
+
+        <label className="flex gap-1 items-center pointer">
+          <input
+            type="radio"
+            name="theme"
+            value="theme-Royal-blue"
+            className="w-4 h-4 accent-[#8D7B68]"
+            checked={screenTheme === "theme-Royal-blue"}
+            onChange={(e) => changeTheme(e.target.value)}
+          />
+          Royal Blue
+        </label>
+
+        <label className="flex gap-1 items-center pointer">
+          <input
+            type="radio"
+            name="theme"
+            value="theme-deep-blue"
+            className="w-4 h-4 accent-[#8D7B68]"
+            checked={screenTheme === "theme-deep-blue"}
+            onChange={(e) => changeTheme(e.target.value)}
+          />
+          Deep Blue
         </label>
       </div>
     </div>
