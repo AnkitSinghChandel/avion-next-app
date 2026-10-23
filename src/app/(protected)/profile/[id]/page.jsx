@@ -398,6 +398,8 @@ END:VCARD`;
                 <NextImage
                   className="icons mx-"
                   src={btnHover ? addicon : doubleUser}
+                  width={20}
+                  height={20}
                   alt=""
                 />
                 {id ? "Update User" : "Add User"}
