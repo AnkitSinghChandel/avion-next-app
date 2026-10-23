@@ -52,9 +52,8 @@
 /* Different browsers ke autofill background ko handle karne ke liye */
 /* Chrome, Edge, Brave, Opera, Safari */
 input:-webkit-autofill {
-  /* Background color ko transparent karne ke liye text box shadow */
-  /* -webkit-box-shadow: 0 0 0px 1000px #f7f4f2 inset !important; */
-  -webkit-box-shadow: 0 0 0px 1000px var(--card-bg) inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fafafa inset !important;
+  -webkit-transition: background-color 9999s ease-in-out 0s;
 
   /* Autofill hone ke baad text ka color kya rahega */
   -webkit-text-fill-color: #4b5966 !important;
@@ -62,8 +61,8 @@ input:-webkit-autofill {
 
 /* Firefox */
 input:-moz-autofill {
-  /* Background color ko transparent karne ke liye text box shadow */
-  box-shadow: 0 0 0px 1000px var(--card-bg) inset !important;
+  box-shadow: 0 0 0px 1000px #fafafa inset !important;
+  transition: background-color 9999s ease-in-out 0s;
 
   /* Autofill hone ke baad text ka color kya rahega */
   -webkit-text-fill-color: #4b5966 !important;
