@@ -62,15 +62,15 @@ const ErrorBoundary = ({ error }: { error: Error }) => {
             </h1>
           </div>
         }
-        extra={
-          <AddButton
-            className="mt-"
-            label={"Try Again"}
-            onClick={() => {
-              window.location.reload();
-            }}
-          />
-        }
+        // extra={
+        //   <AddButton
+        //     className="mt-"
+        //     label={"Try Again"}
+        //     onClick={() => {
+        //       window.location.reload();
+        //     }}
+        //   />
+        // }
       />
     </div>
   );

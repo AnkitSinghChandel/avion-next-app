@@ -61,6 +61,7 @@ const SideBarBoard = (props) => {
           <input
             type="radio"
             name="sidebar-option"
+            disabled
             value="2"
             className="w-4 h-4 accent-[#8D7B68]"
             checked={sidebarOption === "2"}
