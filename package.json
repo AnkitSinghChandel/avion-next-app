@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "test": "env-cmd -f .env.test next dev",
-    "prod": "env-cmd -f .env.production next dev",
+    "test:dev": "env-cmd -f .env.test next dev",
+    "prod:dev": "env-cmd -f .env.production next dev",
+    "test": "env-cmd -f .env.test next build && env-cmd -f .env.test next start -p 3001",
+    "prod": "next build && next start",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
