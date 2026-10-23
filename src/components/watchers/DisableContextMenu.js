@@ -22,7 +22,7 @@ const DisableContextMenu = () => {
     return () => {
       document.removeEventListener("contextmenu", disableRightClick);
     };
-  }, [hostname, userid, isAdmin]);
+  }, [userid, isAdmin]);
 };
 
 export default DisableContextMenu;
