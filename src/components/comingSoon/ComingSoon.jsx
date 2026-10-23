@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { WechatWorkOutlined, CloseOutlined } from "@ant-design/icons";

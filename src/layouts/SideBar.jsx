@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef, useTransition } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import "../styles/SideBar.css";

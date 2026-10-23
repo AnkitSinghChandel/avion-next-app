@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import DownArrowOption from "../../assets/icons/DownArrowOption.svg";
@@ -12,13 +13,13 @@ const CurrentWeekDates = ({
 
   // Initialize state for current week start and end Dates 👇
   const [currentWeekStart, setCurrentWeekStart] = useState(
-    moment().startOf("isoWeek").format()
+    moment().startOf("isoWeek").format(),
   );
   const [currentWeekEnd, setCurrentWeekEnd] = useState(
-    moment().endOf("isoWeek").format()
+    moment().endOf("isoWeek").format(),
   );
   const [currentWeekNumber, setCurrentWeekNumber] = useState(
-    moment().isoWeek()
+    moment().isoWeek(),
   ); //current week Number.
 
   // Function to navigate to the previous week 👇
